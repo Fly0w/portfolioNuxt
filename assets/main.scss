@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Afacad&family=Questrial&family=Raleway:wght@200&display=swap");
+
+html,
+body {
+  margin: 0;
+  width: 100vw;
+}
+
+:root {
+  --primary: #0abab5;
+  --text-primary: #23312f;
+  --secondary: #7fb398;
+  --tertiary: #ff9c00;
+  --accent: #ffae9e;
+  --neutral: #f2f7f7;
+}
+
+section:not(:first-of-type) {
+  padding-top: 100px;
+}
