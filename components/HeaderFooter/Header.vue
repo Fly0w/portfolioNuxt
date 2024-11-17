@@ -9,18 +9,34 @@
         <li>
           <NuxtLink class="" to="#landing-section">Presentation</NuxtLink>
         </li>
-        <li><NuxtLink class="" to="#curriculum">Curriculum</NuxtLink></li>
+        <li><NuxtLink class="" to="#curriculum'">Curriculum</NuxtLink></li>
         <li><NuxtLink class="" to="#values">Values</NuxtLink></li>
         <li><NuxtLink class="" to="#projects">Projects</NuxtLink></li>
         <li><NuxtLink class="" to="#skills">Skills</NuxtLink></li>
         <li><NuxtLink class="" to="#contacts">Contact</NuxtLink></li>
         <li><NuxtLink class="" to="#downloads">Downloads</NuxtLink></li>
+        <button type="button" @click="updateQuery('fr')">FR</button>
+        <button type="button" @click="updateQuery('jp')">JP</button>
       </ul>
     </nav>
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter();
+const route = useRoute();
+
+const updateQuery = (lang: string) => {
+  router.push({
+    path: route.path,
+    query: {
+      ...route.query,
+      lang,
+    },
+    hash: route.hash,
+  });
+};
+</script>
 
 <style scoped>
 nav {
