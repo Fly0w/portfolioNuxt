@@ -9,7 +9,7 @@
         <li>
           <NuxtLink class="" to="#landing-section">Presentation</NuxtLink>
         </li>
-        <li><NuxtLink class="" to="#curriculum'">Curriculum</NuxtLink></li>
+        <li><NuxtLink class="" to="#curriculum">Curriculum</NuxtLink></li>
         <li><NuxtLink class="" to="#values">Values</NuxtLink></li>
         <li><NuxtLink class="" to="#projects">Projects</NuxtLink></li>
         <li><NuxtLink class="" to="#skills">Skills</NuxtLink></li>
