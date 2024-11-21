@@ -77,6 +77,9 @@ const textData = computed(() => {
 </script>
 
 <style scoped>
+#values {
+  padding-bottom: 100px;
+}
 .content {
   display: flex;
   align-items: start;

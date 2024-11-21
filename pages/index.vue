@@ -5,9 +5,9 @@
     <Curriculum class="bg-tprimary" />
     <Wave colorBg="bg-tprimary" />
     <Values class="bg-slate-50" />
-    <Wave colorBg="bg-slate-50" />
-    <Projects class="bg-tprimary" />
-    <Wave colorBg="bg-tprimary" />
+    <!-- <Wave colorBg="bg-slate-50" /> -->
+    <Projects />
+    <!-- <Wave colorBg="bg-slate-50" /> -->
     <Skills class="bg-slate-50" />
     <Wave colorBg="bg-slate-50" />
     <Contacts class="bg-tprimary" />
