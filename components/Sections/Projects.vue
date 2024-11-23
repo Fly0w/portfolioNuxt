@@ -5,17 +5,30 @@
   >
     <h3 class="section-header font-tertiary">Projects</h3>
     <main>
-      <h3>Title</h3>
-      <h4>Subtitle</h4>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem
-        blanditiis hic iste modi facere animi perferendis! Numquam a adipisci
-        rem explicabo nam cum, quasi eius laboriosam maiores harum beatae quis!
-      </p>
-      <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-      </ul>
+      <div class="project-card">
+        <h3>{{ listProjects[selectedProject].title }}</h3>
+        <h4>{{ listProjects[selectedProject].subtitle }}</h4>
+        <p>{{ listProjects[selectedProject].description }}</p>
+        <ul>
+          <li
+            class="tool-list"
+            v-for="tool in listProjects[selectedProject].tools"
+            :key="tool"
+          >
+            <NuxtImg
+              class="image-project"
+              :src="iconsData()[tool]?.icon"
+              :alt="iconsData()[tool]?.iconText"
+              draggable="false"
+              @mouseenter="isHover = tool"
+              @mouseleave="isHover = ''"
+            />
+          </li>
+        </ul>
+        <p v-if="isHover !== ''" class="popover">
+          {{ iconsData()[isHover].description[lang] }}
+        </p>
+      </div>
     </main>
     <ul
       class="list-projects"
@@ -28,14 +41,14 @@
       @touchend="onDragEnd"
     >
       <li
-        v-for="project in listProjects"
-        :key="project"
-        @click="selectedProject = project"
+        v-for="(project, title) in listProjects"
+        :key="title"
+        @click="selectedProject = title"
       >
         <NuxtImg
           class="image-project"
-          :src="`/img/${project}.jpg`"
-          :alt="project"
+          :src="`/img/${title}.jpg`"
+          :alt="title"
           draggable="false"
         />
       </li>
@@ -44,10 +57,15 @@
 </template>
 
 <script lang="ts" setup>
-const selectedProject = ref("BrandJapan");
+const selectedProject = ref<keyof typeof listProjects.value>("BrandJapan");
 const isDragging = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
+const isHover = ref("");
+
+const lang = useState<string>("lang");
+
+console.log(lang.value);
 
 function onDragStart(e: MouseEvent | TouchEvent) {
   isDragging.value = true;
@@ -83,15 +101,76 @@ function onDragEnd() {
   isDragging.value = false;
 }
 
-const listProjects = [
-  "BrandJapan",
-  "KidsJapan",
-  "ShareHouseManager",
-  "Promptopia",
-  "OmoteBike",
-  "Robofriends",
-  "FacetoFace",
-];
+const listProjects = computed(() => {
+  // TODO need to add translation
+  return {
+    BrandJapan: {
+      title: "BrandJapan",
+      subtitle: "Second-hand high-brand listing platform",
+      description:
+        "BrandJapan is a platform where users can buy and sell second-hand high-end apparel items such as bags, clothes, and accessories. As a member of the development team, I worked on the 'My Page' section of the website, where customers can apply to list their items, which are then assessed by an administrator.",
+      tools: ["html", "css", "javascript", "bootstrap"],
+    },
+    KidsJapan: {
+      title: "KidsJapan",
+      subtitle: "C2C educational platform providing lessons for kids",
+      description:
+        "KidsJapan is a website where anyone can register as a teacher and post private lessons for children under 14 years old. The web application includes many useful features such as real-time chat, an interactive map to find lessons in the desired area, real-time video streaming for online lessons, and more.",
+      tools: ["html", "css", "vueJS", "nuxt", "vuetify", "bootstrap", "seo"],
+    },
+    ShareHouseManager: {
+      title: "Share House Manager",
+      subtitle: "Sharehouse life organizer",
+      description:
+        "This app was created to help tenants of a sharehouse track their duties, such as buying common groceries, paying the monthly community fee, following the garbage duty rotation, or monitoring shared bicycle usage. Developed with ViteJS/VueJS, the app provides an excellent visual interface without compromising performance. The use of a next-generation database like Firebase ensures reliable data traffic and ease of maintenance. It was developed for my former sharehouse and is still in use today.",
+      tools: ["html", "css", "vueJS", "firebase", "tailwindCSS", "vercel"],
+    },
+    Promptopia: {
+      title: "Promptopia",
+      subtitle: "An AI prompt sharing social network",
+      description:
+        "Share your best ChatGPT prompts with the Promptopia community! Sign in using your Google account, then post and edit your best AI prompts with other users. This app is built with NextJS to ensure fast page and image load times, as well as easy website routing.",
+      tools: [
+        "html",
+        "css",
+        "reactJS",
+        "nextJS",
+        "mongoDB",
+        "tailwindCSS",
+        "vercel",
+      ],
+    },
+    OmoteBike: {
+      title: "OmoteBike",
+      subtitle: "Keep track of shared bicycle status",
+      description:
+        "A NextJS web app to manage and keep track of a share house's shared bike. Easy to use, it allows users to know exactly when the bike is in use or unavailable.",
+      tools: [
+        "html",
+        "css",
+        "reactJS",
+        "nextJS",
+        "mongoDB",
+        "tailwindCSS",
+        "vercel",
+      ],
+    },
+    Robofriends: {
+      title: "Robofriends",
+      subtitle: "Keep track of your robot friends",
+      description:
+        "A basic ReactJS app I created following a tutorial in the Zero To Mastery program. The app generates individual cards for each customer/robot with their personal information. The search bar updates dynamically as the user types.",
+      tools: ["html", "css", "reactJS"],
+    },
+    FacetoFace: {
+      title: "Face to Face",
+      subtitle: "Detect faces within images",
+      description:
+        "A ReactJS app that allows you to detect faces in an image by providing a URL. You must first register to create your profile, and then scan as many face images as you like.",
+      tools: ["html", "css", "reactJS", "postgreSQL"],
+    },
+  };
+});
 </script>
 
 <style scoped>
@@ -135,14 +214,73 @@ main {
   width: 350px;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.404);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 30px;
+
   margin-left: 40px;
   margin-bottom: 50px;
-  padding: 2rem;
+  font-family: "Questrial", "sans-serif";
+
+  .project-card {
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.604);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+
+    h3 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .popover {
+      position: absolute;
+      bottom: 80px; /* Ajustez en fonction de votre mise en page */
+      left: 10px; /* Centrez horizontalement */
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      white-space: nowrap;
+      z-index: 10; /* Assurez-vous que le popover est au-dessus */
+    }
+
+    ul {
+      display: flex;
+      gap: 20px;
+      padding: 1rem 1rem 5px 1rem;
+      overflow-x: scroll;
+      width: 100%;
+      height: 70px;
+
+      li {
+        height: 100%;
+        min-width: 50px;
+        display: grid;
+        place-items: center;
+      }
+      img {
+        height: 100%;
+      }
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+    }
+  }
 }
 
 .list-projects {
