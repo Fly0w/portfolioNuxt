@@ -117,7 +117,7 @@
 
         <div>
           <h5 class="font-tertiary font-bold">Web Engineer</h5>
-          <h6 v-if="route.query.lang === 'jp'" class="font-tertiary">
+          <h6 v-if="lang === 'jp'" class="font-tertiary">
             株式会社イーグロース
           </h6>
           <h6 v-else class="font-tertiary">E-growth Inc.</h6>
@@ -147,9 +147,7 @@
 
         <div>
           <h5 class="font-tertiary font-bold">Frontend Engineer</h5>
-          <h6 v-if="route.query.lang === 'jp'" class="font-tertiary">
-            株式会社INVEST
-          </h6>
+          <h6 v-if="lang === 'jp'" class="font-tertiary">株式会社INVEST</h6>
           <h6 v-else class="font-tertiary">INVEST Inc.</h6>
 
           <p class="md:text-lg sm:text-sm font-tertiary">
@@ -177,9 +175,9 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
+const lang = useState("lang");
 
-console.log(route.query.lang);
+console.log(lang.value);
 </script>
 
 <style scoped>

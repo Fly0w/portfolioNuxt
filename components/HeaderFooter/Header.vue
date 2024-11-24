@@ -23,18 +23,8 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter();
-const route = useRoute();
-
 const updateQuery = (lang: string) => {
-  router.push({
-    path: route.path,
-    query: {
-      ...route.query,
-      lang,
-    },
-    hash: route.hash,
-  });
+  useState("lang").value = lang;
 };
 </script>
 

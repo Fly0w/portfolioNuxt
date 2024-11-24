@@ -6,8 +6,6 @@
   </v-app>
 </template>
 
-<script setup lang="ts">
-const lang = useState<string>("lang", () => "en");
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

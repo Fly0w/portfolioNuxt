@@ -9,11 +9,12 @@
         <h3>{{ listProjects[selectedProject].title }}</h3>
         <h4>{{ listProjects[selectedProject].subtitle }}</h4>
         <p>{{ listProjects[selectedProject].description }}</p>
-        <ul>
+        <ul ref="listTools">
           <li
             class="tool-list"
             v-for="tool in listProjects[selectedProject].tools"
             :key="tool"
+            :style="`anchor-name: --${tool}`"
           >
             <NuxtImg
               class="image-project"
@@ -25,8 +26,12 @@
             />
           </li>
         </ul>
-        <p v-if="isHover !== ''" class="popover">
-          {{ iconsData()[isHover].description[lang] }}
+        <p
+          v-if="isHover !== ''"
+          class="popover"
+          :style="`position-anchor: --${isHover}`"
+        >
+          {{ iconsData()[isHover].iconText }}
         </p>
       </div>
     </main>
@@ -57,11 +62,22 @@
 </template>
 
 <script lang="ts" setup>
-const selectedProject = ref<keyof typeof listProjects.value>("BrandJapan");
+const selectedProject = ref<keyof typeof listProjects.value>("KidsJapan");
 const isDragging = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
 const isHover = ref("");
+
+const listTools = ref<HTMLElement | any>(null);
+watch(
+  selectedProject,
+  () => {
+    if (listTools.value) {
+      listTools.value.scrollLeft = 0;
+    }
+  },
+  { immediate: true }
+);
 
 const lang = useState<string>("lang");
 
@@ -104,19 +120,19 @@ function onDragEnd() {
 const listProjects = computed(() => {
   // TODO need to add translation
   return {
-    BrandJapan: {
-      title: "BrandJapan",
-      subtitle: "Second-hand high-brand listing platform",
-      description:
-        "BrandJapan is a platform where users can buy and sell second-hand high-end apparel items such as bags, clothes, and accessories. As a member of the development team, I worked on the 'My Page' section of the website, where customers can apply to list their items, which are then assessed by an administrator.",
-      tools: ["html", "css", "javascript", "bootstrap"],
-    },
     KidsJapan: {
       title: "KidsJapan",
       subtitle: "C2C educational platform providing lessons for kids",
       description:
         "KidsJapan is a website where anyone can register as a teacher and post private lessons for children under 14 years old. The web application includes many useful features such as real-time chat, an interactive map to find lessons in the desired area, real-time video streaming for online lessons, and more.",
       tools: ["html", "css", "vueJS", "nuxt", "vuetify", "bootstrap", "seo"],
+    },
+    BrandJapan: {
+      title: "BrandJapan",
+      subtitle: "Second-hand high-brand listing platform",
+      description:
+        "BrandJapan is a platform where users can buy and sell second-hand high-end apparel items such as bags, clothes, and accessories. As a member of the development team, I worked on the 'My Page' section of the website, where customers can apply to list their items, which are then assessed by an administrator.",
+      tools: ["html", "css", "javascript", "bootstrap"],
     },
     ShareHouseManager: {
       title: "Share House Manager",
@@ -228,7 +244,7 @@ main {
     border-radius: 30px;
     padding: 2rem;
     width: 100%;
-    position: relative;
+    /* position: relative;  */
 
     h3 {
       text-align: center;
@@ -248,14 +264,14 @@ main {
     }
     .popover {
       position: absolute;
-      bottom: 80px; /* Ajustez en fonction de votre mise en page */
-      left: 10px; /* Centrez horizontalement */
+      bottom: anchor(top);
+      left: anchor(left);
       background: rgba(0, 0, 0, 0.8);
       color: white;
       padding: 0.5rem;
       border-radius: 5px;
       white-space: nowrap;
-      z-index: 10; /* Assurez-vous que le popover est au-dessus */
+      z-index: 10;
     }
 
     ul {
@@ -308,7 +324,7 @@ main {
   li {
     width: 100px;
     aspect-ratio: 1;
-    flex-shrink: 0; /* Empêche les éléments de rétrécir */
+    flex-shrink: 0;
     box-shadow: 0 2px 7px 0 rgba(31, 38, 135, 0.37);
     border-radius: 100%;
     overflow: hidden;
@@ -320,8 +336,9 @@ main {
     }
 
     .image-project {
-      width: 100%; /* S'adapte à la largeur du parent */
-      height: 100%; /* Remplit le conteneur */
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1;
     }
   }
 }
