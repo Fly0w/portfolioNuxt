@@ -14,7 +14,7 @@
             class="tool-list"
             v-for="tool in listProjects[selectedProject].tools"
             :key="tool"
-            :style="`anchor-name: --${tool}`"
+            :style="`anchor-name: --projects-${tool}`"
           >
             <NuxtImg
               class="image-project"
@@ -29,7 +29,7 @@
         <p
           v-if="isHover !== ''"
           class="popover"
-          :style="`position-anchor: --${isHover}`"
+          :style="`position-anchor: --projects-${isHover}`"
         >
           {{ iconsData()[isHover].iconText }}
         </p>
