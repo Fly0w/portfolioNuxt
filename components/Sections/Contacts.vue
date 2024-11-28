@@ -1,37 +1,37 @@
 <template>
-  <section>
+  <section id="contacts">
     <h3 class="section-header font-tertiary">Contacts</h3>
     <div
       class="flex flex-row flex-wrap justify-center gap-20 items-center h-5/6"
     >
       <NuxtLink
-        to="https://www.facebook.com/"
+        to="https://www.facebook.com/florian.budniewski"
         target="_blank"
         class="blob1 hover:scale-110"
         ><NuxtImg src="/icons/facebook.svg" height="60px" width="60px"
       /></NuxtLink>
       <NuxtLink
-        to="https://www.instagram.com/"
+        to="https://www.instagram.com/florian_budniewski/"
         target="_blank"
         class="blob2 hover:scale-110"
       >
         <NuxtImg src="/icons/instagram.svg" height="60px" width="60px"
       /></NuxtLink>
       <NuxtLink
-        to="https://line.me/en/"
+        to="https://line.me/R/@florian.jp.fr"
         target="_blank"
         class="blob6 hover:scale-110"
         ><NuxtImg src="/icons/line.svg" height="60px" width="60px"
       /></NuxtLink>
       <NuxtLink
-        to="https://www.linkedin.com/home"
+        to="https://www.linkedin.com/in/florian-budniewski/"
         target="_blank"
         class="blob4 hover:scale-110"
         ><NuxtImg src="/icons/linkedin.svg" height="60px" width="60px"
       /></NuxtLink>
 
       <NuxtLink
-        to="https://twitter.com/"
+        to="mailto:florian.budniewski@hotmail.com"
         target="_blank"
         class="blob8 hover:scale-110"
         ><NuxtImg src="/icons/email.svg" height="60px" width="60px"
@@ -43,6 +43,9 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+#contacts {
+  padding-bottom: 50px;
+}
 .section-header {
   color: var(--neutral);
 }

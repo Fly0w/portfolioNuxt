@@ -196,7 +196,9 @@ const listSkills = {
   }
   .skill-list-card {
     border-radius: 30px;
-    border: 1px solid black;
+    border: 2px solid var(--neutral);
+    background-color: white;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     padding: 1rem;
     width: 400px;
     display: flex;
