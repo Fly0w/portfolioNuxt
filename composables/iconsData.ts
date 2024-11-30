@@ -6,12 +6,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un framework CSS populaire pour créer des sites web réactifs et modernes.",
         en: "A popular CSS framework for creating responsive and modern websites.",
-        jp: "レスポンシブでモダンなウェブサイトを作成するための人気のあるCSSフレームワーク。",
+        ja: "レスポンシブでモダンなウェブサイトを作成するための人気のあるCSSフレームワーク。",
       },
       description: {
         fr: "Bootstrap facilite la création de sites web modernes avec des grilles flexibles, des composants préconstruits, et un design réactif.",
         en: "Bootstrap simplifies building modern websites with flexible grids, prebuilt components, and responsive design.",
-        jp: "Bootstrapは、柔軟なグリッド、プリビルドコンポーネント、レスポンシブデザインでモダンなウェブサイト構築を簡単にします。",
+        ja: "Bootstrapは、柔軟なグリッド、プリビルドコンポーネント、レスポンシブデザインでモダンなウェブサイト構築を簡単にします。",
       },
       keyPoints: {
         fr: [
@@ -24,7 +24,7 @@ export default function iconsData(): any {
           "Prebuilt components for quick integration",
           "Large community and comprehensive documentation",
         ],
-        jp: [
+        ja: [
           "柔軟なデザインのためのレスポンシブグリッドシステム",
           "迅速な統合のためのプリビルドコンポーネント",
           "大規模なコミュニティと包括的なドキュメント",
@@ -37,12 +37,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Le langage de style utilisé pour concevoir des sites web attrayants.",
         en: "The styling language for designing visually appealing websites.",
-        jp: "魅力的なウェブサイトをデザインするためのスタイリング言語。",
+        ja: "魅力的なウェブサイトをデザインするためのスタイリング言語。",
       },
       description: {
         fr: "CSS 3 ajoute des fonctionnalités modernes comme les animations, les transformations 3D, et les transitions pour des designs interactifs.",
         en: "CSS 3 introduces modern features like animations, 3D transformations, and transitions for interactive designs.",
-        jp: "CSS 3は、アニメーション、3D変換、トランジションなど、インタラクティブなデザインのためのモダンな機能を追加します。",
+        ja: "CSS 3は、アニメーション、3D変換、トランジションなど、インタラクティブなデザインのためのモダンな機能を追加します。",
       },
       keyPoints: {
         fr: [
@@ -55,7 +55,7 @@ export default function iconsData(): any {
           "Responsive design with media queries",
           "Advanced customization with CSS variables",
         ],
-        jp: [
+        ja: [
           "アニメーションとトランジションのサポート",
           "メディアクエリによるレスポンシブデザイン",
           "CSS変数による高度なカスタマイズ",
@@ -68,12 +68,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un outil collaboratif pour le prototypage et la conception d'interfaces.",
         en: "A collaborative tool for prototyping and interface design.",
-        jp: "プロトタイピングとインターフェースデザインのためのコラボレーションツール。",
+        ja: "プロトタイピングとインターフェースデザインのためのコラボレーションツール。",
       },
       description: {
         fr: "Figma offre des fonctionnalités avancées pour la conception d'interfaces utilisateur en temps réel et le travail d'équipe.",
         en: "Figma provides advanced features for real-time UI design and team collaboration.",
-        jp: "FigmaはリアルタイムのUIデザインとチームコラボレーションのための高度な機能を提供します。",
+        ja: "FigmaはリアルタイムのUIデザインとチームコラボレーションのための高度な機能を提供します。",
       },
       keyPoints: {
         fr: [
@@ -86,7 +86,7 @@ export default function iconsData(): any {
           "Cloud-based cross-platform compatibility",
           "Advanced tools for prototyping and interactive designs",
         ],
-        jp: [
+        ja: [
           "複数ユーザーによるリアルタイムデザイン",
           "クラウドベースのクロスプラットフォーム互換性",
           "プロトタイピングとインタラクティブデザインのための高度なツール",
@@ -99,12 +99,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Une plateforme tout-en-un pour développer des applications mobiles et web.",
         en: "An all-in-one platform for developing mobile and web apps.",
-        jp: "モバイルおよびウェブアプリ開発のためのオールインワンプラットフォーム。",
+        ja: "モバイルおよびウェブアプリ開発のためのオールインワンプラットフォーム。",
       },
       description: {
         fr: "Firebase fournit des outils pour l'hébergement, la base de données, l'authentification et les notifications push.",
         en: "Firebase offers tools for hosting, database, authentication, and push notifications.",
-        jp: "Firebaseは、ホスティング、データベース、認証、プッシュ通知のためのツールを提供します。",
+        ja: "Firebaseは、ホスティング、データベース、認証、プッシュ通知のためのツールを提供します。",
       },
       keyPoints: {
         fr: [
@@ -117,7 +117,7 @@ export default function iconsData(): any {
           "Easy authentication with multiple providers",
           "Simplified hosting and deployment",
         ],
-        jp: [
+        ja: [
           "リアルタイムとクラウドデータベース",
           "複数プロバイダーによる簡単な認証",
           "簡素化されたホスティングとデプロイメント",
@@ -130,12 +130,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Collaboration et gestion de code",
         en: "Collaboration and code management",
-        jp: "コラボレーションとコード管理",
+        ja: "コラボレーションとコード管理",
       },
       description: {
         fr: "GitHub est une plateforme de gestion de code et de collaboration, idéale pour le contrôle de version et le travail d'équipe.",
         en: "GitHub is a code management and collaboration platform, ideal for version control and teamwork.",
-        jp: "GitHubは、バージョン管理とチーム作業に最適なコード管理およびコラボレーションプラットフォームです。",
+        ja: "GitHubは、バージョン管理とチーム作業に最適なコード管理およびコラボレーションプラットフォームです。",
       },
       keyPoints: {
         fr: [
@@ -148,7 +148,7 @@ export default function iconsData(): any {
           "Support for open-source projects",
           "Efficient version management with Git",
         ],
-        jp: [
+        ja: [
           "DevOpsツールとの統合",
           "オープンソースプロジェクトのサポート",
           "Gitによる効率的なバージョン管理",
@@ -161,12 +161,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Structure des pages web",
         en: "Web page structure",
-        jp: "ウェブページの構造",
+        ja: "ウェブページの構造",
       },
       description: {
         fr: "HTML (HyperText Markup Language) est la base de la structuration des pages web, définissant leur contenu et leur organisation.",
         en: "HTML (HyperText Markup Language) is the foundation of structuring web pages, defining their content and organization.",
-        jp: "HTML（ハイパーテキストマークアップ言語）は、ウェブページの構造を定義し、コンテンツと構成を定義します。",
+        ja: "HTML（ハイパーテキストマークアップ言語）は、ウェブページの構造を定義し、コンテンツと構成を定義します。",
       },
       keyPoints: {
         fr: [
@@ -179,7 +179,7 @@ export default function iconsData(): any {
           "Compatibility with CSS and JavaScript",
           "Extensions with modern APIs like Web Components",
         ],
-        jp: [
+        ja: [
           "すべてのウェブサイトの基本要素",
           "CSSおよびJavaScriptとの互換性",
           "Web ComponentsなどのモダンなAPIによる拡張",
@@ -192,12 +192,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Langage pour l'interactivité web",
         en: "Language for web interactivity",
-        jp: "ウェブのインタラクティブ性を高める言語",
+        ja: "ウェブのインタラクティブ性を高める言語",
       },
       description: {
         fr: "JavaScript est un langage de programmation essentiel pour ajouter de l'interactivité et du dynamisme aux sites web.",
         en: "JavaScript is a key programming language for adding interactivity and dynamism to websites.",
-        jp: "JavaScriptは、ウェブサイトにインタラクティブ性とダイナミズムを追加するための重要なプログラミング言語です。",
+        ja: "JavaScriptは、ウェブサイトにインタラクティブ性とダイナミズムを追加するための重要なプログラミング言語です。",
       },
       keyPoints: {
         fr: [
@@ -210,7 +210,7 @@ export default function iconsData(): any {
           "Rich ecosystem with popular frameworks",
           "Support for modern technologies like WebSockets",
         ],
-        jp: [
+        ja: [
           "クライアントサイドおよびサーバーサイドの実行",
           "人気のあるフレームワークを備えた豊富なエコシステム",
           "WebSocketsなどのモダンな技術のサポート",
@@ -223,12 +223,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Framework PHP moderne",
         en: "Modern PHP framework",
-        jp: "モダンなPHPフレームワーク",
+        ja: "モダンなPHPフレームワーク",
       },
       description: {
         fr: "Laravel est un framework PHP robuste et élégant, conçu pour simplifier le développement d'applications web grâce à son écosystème riche.",
         en: "Laravel is a robust and elegant PHP framework designed to simplify web application development with its rich ecosystem.",
-        jp: "Laravelは、豊富なエコシステムを備えたウェブアプリケーション開発を簡素化するために設計された堅牢でエレガントなPHPフレームワークです。",
+        ja: "Laravelは、豊富なエコシステムを備えたウェブアプリケーション開発を簡素化するために設計された堅牢でエレガントなPHPフレームワークです。",
       },
       keyPoints: {
         fr: [
@@ -241,7 +241,7 @@ export default function iconsData(): any {
           "Powerful ORM with Eloquent",
           "Native support for scheduled tasks with Scheduler",
         ],
-        jp: [
+        ja: [
           "直感的なルーティングシステム",
           "Eloquentを使用した強力なORM",
           "Schedulerによるスケジュールされたタスクのネイティブサポート",
@@ -254,12 +254,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Base de données NoSQL orientée documents",
         en: "Document-oriented NoSQL database",
-        jp: "ドキュメント指向のNoSQLデータベース",
+        ja: "ドキュメント指向のNoSQLデータベース",
       },
       description: {
         fr: "MongoDB est une base de données NoSQL flexible qui stocke les données dans des documents JSON, idéale pour les applications modernes.",
         en: "MongoDB is a flexible NoSQL database that stores data in JSON documents, ideal for modern applications.",
-        jp: "MongoDBは、データをJSONドキュメントに保存する柔軟なNoSQLデータベースで、モダンなアプリケーションに最適です。",
+        ja: "MongoDBは、データをJSONドキュメントに保存する柔軟なNoSQLデータベースで、モダンなアプリケーションに最適です。",
       },
       keyPoints: {
         fr: [
@@ -272,7 +272,7 @@ export default function iconsData(): any {
           "Powerful queries with simple syntax",
           "Horizontal scalability for large applications",
         ],
-        jp: [
+        ja: [
           "複雑なデータの柔軟な保存",
           "シンプルな構文を持つ強力なクエリ",
           "大規模アプリケーション向けの水平スケーラビリティ",
@@ -285,12 +285,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un système de gestion de base de données relationnelle open-source.",
         en: "An open-source relational database management system.",
-        jp: "オープンソースのリレーショナルデータベース管理システム。",
+        ja: "オープンソースのリレーショナルデータベース管理システム。",
       },
       description: {
         fr: "MySQL est connu pour sa performance et est souvent utilisé pour les sites web et applications.",
         en: "MySQL is known for its performance and is often used for websites and applications.",
-        jp: "MySQLはそのパフォーマンスで知られ、Webサイトやアプリケーションによく使用されます。",
+        ja: "MySQLはそのパフォーマンスで知られ、Webサイトやアプリケーションによく使用されます。",
       },
       keyPoints: {
         fr: [
@@ -303,7 +303,7 @@ export default function iconsData(): any {
           "Open-source and free",
           "Supported by a large community",
         ],
-        jp: [
+        ja: [
           "高いパフォーマンス",
           "オープンソースで無料",
           "大規模なコミュニティがサポート",
@@ -316,12 +316,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un framework React pour le rendu côté serveur et les sites statiques.",
         en: "A React framework for server-side rendering and static sites.",
-        jp: "サーバーサイドレンダリングと静的サイトのためのReactフレームワーク。",
+        ja: "サーバーサイドレンダリングと静的サイトのためのReactフレームワーク。",
       },
       description: {
         fr: "Next.js facilite la création d'applications web performantes grâce au rendu hybride SSR/SSG.",
         en: "Next.js simplifies building performant web applications with hybrid SSR/SSG rendering.",
-        jp: "Next.jsは、ハイブリッドなSSR/SSGレンダリングで高性能なWebアプリケーションを構築することを容易にします。",
+        ja: "Next.jsは、ハイブリッドなSSR/SSGレンダリングで高性能なWebアプリケーションを構築することを容易にします。",
       },
       keyPoints: {
         fr: [
@@ -334,7 +334,7 @@ export default function iconsData(): any {
           "Built-in routing",
           "Native TypeScript support",
         ],
-        jp: [
+        ja: [
           "サーバーサイドおよび静的レンダリング",
           "組み込みルーティング",
           "ネイティブTypeScriptサポート",
@@ -347,12 +347,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Framework Vue.js pour applications modernes",
         en: "Vue.js framework for modern applications",
-        jp: "モダンアプリケーション向けのVue.jsフレームワーク",
+        ja: "モダンアプリケーション向けのVue.jsフレームワーク",
       },
       description: {
         fr: "Nuxt.js est un framework basé sur Vue.js, conçu pour créer des applications performantes et optimisées pour le SEO.",
         en: "Nuxt.js is a Vue.js-based framework designed for building high-performance, SEO-optimized applications.",
-        jp: "Nuxt.jsは、Vue.jsに基づいて構築されたフレームワークで、高性能でSEOに最適化されたアプリケーションを構築するために設計されています。",
+        ja: "Nuxt.jsは、Vue.jsに基づいて構築されたフレームワークで、高性能でSEOに最適化されたアプリケーションを構築するために設計されています。",
       },
       keyPoints: {
         fr: [
@@ -365,7 +365,7 @@ export default function iconsData(): any {
           "Support for plugins and middlewares",
           "Optimized developer experience with built-in tools",
         ],
-        jp: [
+        ja: [
           "サーバーサイドレンダリングと静的生成",
           "プラグインとミドルウェアのサポート",
           "統合ツールによる最適化された開発者体験",
@@ -378,12 +378,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un langage de programmation pour le développement web côté serveur.",
         en: "A programming language for server-side web development.",
-        jp: "サーバーサイドのWeb開発のためのプログラミング言語。",
+        ja: "サーバーサイドのWeb開発のためのプログラミング言語。",
       },
       description: {
         fr: "PHP est largement utilisé pour créer des sites web dynamiques et des applications web.",
         en: "PHP is widely used for creating dynamic websites and web applications.",
-        jp: "PHPは、動的なWebサイトやWebアプリケーションの作成に広く使用されています。",
+        ja: "PHPは、動的なWebサイトやWebアプリケーションの作成に広く使用されています。",
       },
       keyPoints: {
         fr: [
@@ -396,7 +396,7 @@ export default function iconsData(): any {
           "Supported by most hosting providers",
           "Compatible with MySQL and PostgreSQL",
         ],
-        jp: [
+        ja: [
           "サーバーサイド言語",
           "ほとんどのホスティングプロバイダーがサポート",
           "MySQLおよびPostgreSQLとの互換性",
@@ -409,12 +409,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Bibliothèque pour interfaces utilisateur",
         en: "Library for user interfaces",
-        jp: "ユーザーインターフェース用ライブラリ",
+        ja: "ユーザーインターフェース用ライブラリ",
       },
       description: {
         fr: "React est une bibliothèque JavaScript populaire pour créer des interfaces utilisateur interactives et dynamiques.",
         en: "React is a popular JavaScript library for building interactive and dynamic user interfaces.",
-        jp: "Reactは、インタラクティブでダイナミックなユーザーインターフェースを構築するための人気のあるJavaScriptライブラリです。",
+        ja: "Reactは、インタラクティブでダイナミックなユーザーインターフェースを構築するための人気のあるJavaScriptライブラリです。",
       },
       keyPoints: {
         fr: [
@@ -427,7 +427,7 @@ export default function iconsData(): any {
           "Support for advanced state management with Redux",
           "Rich and flexible ecosystem",
         ],
-        jp: [
+        ja: [
           "コンポーネントベースのレンダリング",
           "Reduxによる高度な状態管理のサポート",
           "豊富で柔軟なエコシステム",
@@ -440,12 +440,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un framework CSS utilitaire pour un développement rapide.",
         en: "A utility-first CSS framework for rapid development.",
-        jp: "高速開発のためのユーティリティファーストCSSフレームワーク。",
+        ja: "高速開発のためのユーティリティファーストCSSフレームワーク。",
       },
       description: {
         fr: "TailwindCSS permet de créer des interfaces personnalisées en utilisant des classes utilitaires préconçues.",
         en: "TailwindCSS allows building custom interfaces using predesigned utility classes.",
-        jp: "TailwindCSSは、事前設計されたユーティリティクラスを使用してカスタムインターフェースを構築することを可能にします。",
+        ja: "TailwindCSSは、事前設計されたユーティリティクラスを使用してカスタムインターフェースを構築することを可能にします。",
       },
       keyPoints: {
         fr: [
@@ -458,7 +458,7 @@ export default function iconsData(): any {
           "Rapid customization",
           "Compatible with any design",
         ],
-        jp: [
+        ja: [
           "柔軟なユーティリティクラス",
           "迅速なカスタマイズ",
           "あらゆるデザインに対応",
@@ -471,12 +471,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un langage de programmation typé qui améliore JavaScript.",
         en: "A typed programming language that enhances JavaScript.",
-        jp: "JavaScriptを拡張する型付きプログラミング言語。",
+        ja: "JavaScriptを拡張する型付きプログラミング言語。",
       },
       description: {
         fr: "TypeScript apporte des fonctionnalités de typage statique à JavaScript pour une meilleure maintenance du code.",
         en: "TypeScript adds static typing features to JavaScript for better code maintainability.",
-        jp: "TypeScriptは、JavaScriptに静的型付け機能を追加し、コードの保守性を向上させます。",
+        ja: "TypeScriptは、JavaScriptに静的型付け機能を追加し、コードの保守性を向上させます。",
       },
       keyPoints: {
         fr: [
@@ -489,7 +489,7 @@ export default function iconsData(): any {
           "Full interoperability with JavaScript",
           "Supported by major code editors",
         ],
-        jp: [
+        ja: [
           "エラーを防ぐための静的型付け",
           "JavaScriptとの完全な相互運用性",
           "主要なコードエディタがサポート",
@@ -502,12 +502,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Framework progressif pour le web",
         en: "Progressive framework for the web",
-        jp: "ウェブのためのプログレッシブフレームワーク",
+        ja: "ウェブのためのプログレッシブフレームワーク",
       },
       description: {
         fr: "Vue.js est un framework JavaScript progressif et léger pour construire des interfaces utilisateur et des applications web.",
         en: "Vue.js is a progressive and lightweight JavaScript framework for building user interfaces and web applications.",
-        jp: "Vue.jsは、ユーザーインターフェースとウェブアプリケーションを構築するためのプログレッシブで軽量なJavaScriptフレームワークです。",
+        ja: "Vue.jsは、ユーザーインターフェースとウェブアプリケーションを構築するためのプログレッシブで軽量なJavaScriptフレームワークです。",
       },
       keyPoints: {
         fr: [
@@ -520,7 +520,7 @@ export default function iconsData(): any {
           "Flexible ecosystem for large and small projects",
           "Support for libraries like Vuex for state management",
         ],
-        jp: [
+        ja: [
           "シンプルで直感的な構文",
           "大規模および小規模プロジェクト向けの柔軟なエコシステム",
           "状態管理のためのVuexのようなライブラリのサポート",
@@ -533,12 +533,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un framework UI pour Vue.js basé sur le Material Design.",
         en: "A UI framework for Vue.js based on Material Design.",
-        jp: "Material Designに基づいたVue.jsのUIフレームワーク。",
+        ja: "Material Designに基づいたVue.jsのUIフレームワーク。",
       },
       description: {
         fr: "Vuetify permet de créer des interfaces utilisateur élégantes et réactives rapidement en suivant les principes de Material Design.",
         en: "Vuetify enables building stylish and responsive user interfaces quickly, following Material Design principles.",
-        jp: "Vuetifyは、Material Designの原則に従って、洗練されたレスポンシブなユーザーインターフェースを迅速に構築することができます。",
+        ja: "Vuetifyは、Material Designの原則に従って、洗練されたレスポンシブなユーザーインターフェースを迅速に構築することができます。",
       },
       keyPoints: {
         fr: [
@@ -551,7 +551,7 @@ export default function iconsData(): any {
           "Easy customization with themes",
           "Active documentation and community",
         ],
-        jp: [
+        ja: [
           "Material Designベースのコンポーネント",
           "テーマによる簡単なカスタマイズ",
           "活発なドキュメントとコミュニティ",
@@ -564,12 +564,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Optimisation pour les moteurs de recherche.",
         en: "Search Engine Optimization.",
-        jp: "検索エンジン最適化。",
+        ja: "検索エンジン最適化。",
       },
       description: {
         fr: "SEO vise à améliorer la visibilité d'un site web sur les moteurs de recherche.",
         en: "SEO aims to improve a website's visibility on search engines.",
-        jp: "SEOは、検索エンジンでのウェブサイトの可視性を向上させることを目的としています。",
+        ja: "SEOは、検索エンジンでのウェブサイトの可視性を向上させることを目的としています。",
       },
       keyPoints: {
         fr: [
@@ -582,7 +582,7 @@ export default function iconsData(): any {
           "Improved organic ranking",
           "Increased web traffic",
         ],
-        jp: [
+        ja: [
           "技術とコンテンツの最適化",
           "オーガニックランキングの向上",
           "Webトラフィックの増加",
@@ -595,12 +595,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un système de base de données relationnelle avancé et open-source.",
         en: "An advanced open-source relational database system.",
-        jp: "高度なオープンソースのリレーショナルデータベースシステム。",
+        ja: "高度なオープンソースのリレーショナルデータベースシステム。",
       },
       description: {
         fr: "PostgreSQL est reconnu pour sa fiabilité et sa conformité aux standards SQL.",
         en: "PostgreSQL is known for its reliability and compliance with SQL standards.",
-        jp: "PostgreSQLはその信頼性とSQL標準への準拠で知られています。",
+        ja: "PostgreSQLはその信頼性とSQL標準への準拠で知られています。",
       },
       keyPoints: {
         fr: [
@@ -613,7 +613,7 @@ export default function iconsData(): any {
           "Supports complex transactions",
           "Large data management capacity",
         ],
-        jp: [
+        ja: [
           "高い信頼性",
           "複雑なトランザクションをサポート",
           "大規模なデータ管理能力",
@@ -626,12 +626,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Une plateforme de déploiement pour les sites web statiques et JAMstack.",
         en: "A deployment platform for static websites and JAMstack.",
-        jp: "静的ウェブサイトとJAMstackのためのデプロイメントプラットフォーム。",
+        ja: "静的ウェブサイトとJAMstackのためのデプロイメントプラットフォーム。",
       },
       description: {
         fr: "Vercel simplifie le déploiement continu et offre un hébergement rapide pour les sites statiques.",
         en: "Vercel simplifies continuous deployment and offers fast hosting for static sites.",
-        jp: "Vercelは、継続的デプロイメントを簡単にし、静的サイトの高速ホスティングを提供します。",
+        ja: "Vercelは、継続的デプロイメントを簡単にし、静的サイトの高速ホスティングを提供します。",
       },
       keyPoints: {
         fr: [
@@ -644,7 +644,7 @@ export default function iconsData(): any {
           "Support for modern frameworks",
           "Global CDN infrastructure",
         ],
-        jp: [
+        ja: [
           "迅速かつ簡単なデプロイメント",
           "最新のフレームワークに対応",
           "グローバルCDNインフラストラクチャ",
@@ -657,12 +657,12 @@ export default function iconsData(): any {
       subtitle: {
         fr: "Un framework moderne pour créer des expériences web rapides et dynamiques.",
         en: "A modern framework for building fast and dynamic web experiences.",
-        jp: "高速でダイナミックなウェブ体験を構築するためのモダンなフレームワーク。",
+        ja: "高速でダイナミックなウェブ体験を構築するためのモダンなフレームワーク。",
       },
       description: {
         fr: "Remix est un framework moderne conçu pour créer des applications web performantes avec une prise en charge native du rendu côté serveur (SSR) et une gestion avancée des données. Il met l'accent sur l'expérience utilisateur et la rapidité.",
         en: "Remix is a modern framework designed for building high-performance web applications with native support for server-side rendering (SSR) and advanced data handling. It focuses on user experience and speed.",
-        jp: "Remixは、高性能なウェブアプリケーションを構築するためのモダンなフレームワークで、サーバーサイドレンダリング（SSR）と高度なデータ処理をネイティブでサポートします。ユーザーエクスペリエンスとスピードに重点を置いています。",
+        ja: "Remixは、高性能なウェブアプリケーションを構築するためのモダンなフレームワークで、サーバーサイドレンダリング（SSR）と高度なデータ処理をネイティブでサポートします。ユーザーエクスペリエンスとスピードに重点を置いています。",
       },
       keyPoints: {
         fr: [
@@ -675,7 +675,7 @@ export default function iconsData(): any {
           "Intuitive routing and data management",
           "Tailored for modern apps with optimized tooling",
         ],
-        jp: [
+        ja: [
           "パフォーマンス向上のためのサーバーサイドレンダリング（SSR）",
           "直感的なルーティングとデータ管理",
           "最適化されたツールを備えたモダンなアプリに対応",

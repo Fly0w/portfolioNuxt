@@ -16,7 +16,8 @@
         <li><NuxtLink class="" to="#contacts">Contact</NuxtLink></li>
         <li><NuxtLink class="" to="#downloads">Downloads</NuxtLink></li>
         <button type="button" @click="updateQuery('fr')">FR</button>
-        <button type="button" @click="updateQuery('jp')">JP</button>
+        <button type="button" @click="updateQuery('en')">EN</button>
+        <button type="button" @click="updateQuery('ja')">JP</button>
       </ul>
     </nav>
   </header>
@@ -25,7 +26,16 @@
 <script setup lang="ts">
 const updateQuery = (lang: string) => {
   useState("lang").value = lang;
+  setLanguage(lang);
 };
+
+function setLanguage(lang: string) {
+  useHead({
+    htmlAttrs: {
+      lang,
+    },
+  });
+}
 </script>
 
 <style scoped>

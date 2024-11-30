@@ -41,7 +41,7 @@ const textdata = computed(() => {
         shokumu: "Historique professionnel (jp)",
       };
 
-    case "jp":
+    case "ja":
       return {
         title: "ダウンロード",
         rireki: "履歴書 (日本語)",
@@ -109,7 +109,7 @@ ul {
       right: 0;
       background-position: start;
       background-size: cover;
-      opacity: 0.25;
+      opacity: 0.45;
       z-index: -4;
       transition: all 0.5s ease;
     }

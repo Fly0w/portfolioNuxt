@@ -34,6 +34,10 @@
           {{ iconsData()[isHover].iconText }}
         </p>
       </div>
+      <div class="buttons">
+        <NuxtLink :to="``" class="redirect">Github</NuxtLink>
+        <NuxtLink :to="``" class="redirect">Visit</NuxtLink>
+      </div>
     </main>
     <ul
       class="list-projects"
@@ -227,40 +231,86 @@ main {
 
 main {
   flex: 1;
-  width: 350px;
+
+  min-width: 300px;
   display: flex;
   flex-direction: column;
+  max-height: 80%; /* Limite la hauteur de la project-card à 80% de main */
+  overflow: hidden; /* Cache le débordement éventuel */
 
   margin-left: 40px;
-  margin-bottom: 50px;
   font-family: "Questrial", "sans-serif";
 
+  position: relative;
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+
+    .redirect {
+      padding: 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: solid 2px white;
+      border-radius: 15px;
+      text-align: center;
+      font-size: clamp(15px, 1.5vw, 30px);
+    }
+  }
+
   .project-card {
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    word-wrap: break-word; /* Permet de couper les mots trop longs */
+    overflow-wrap: break-word; /* Support étendu */
+    hyphens: auto; /* Ajoute un tiret automatique lors de la coupure */
+
     background: rgba(255, 255, 255, 0.604);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 30px;
     padding: 2rem;
-    width: 100%;
-    /* position: relative;  */
+    width: 30vw;
+    min-width: 300px;
+    max-width: 500px;
+    max-height: 90%;
 
     h3 {
       text-align: center;
-      font-size: 40px;
+      font-size: clamp(40px, 3.5vw, 70px);
       font-weight: bold;
-      margin-bottom: 15px;
+      flex-shrink: 0;
     }
 
     h4 {
-      font-size: 22px;
-      margin-bottom: 15px;
+      font-size: clamp(22px, 2.5vw, 30px);
+      flex-shrink: 0;
     }
 
     p {
       font-size: 14px;
-      margin-bottom: 15px;
+      font-size: clamp(12px, 1.5vw, 16px);
+      flex-shrink: 1;
+      overflow-y: scroll;
+      max-height: calc(
+        100% - 120px
+      ); /* Ajuste selon les autres éléments (titres, padding) */
+
+      &::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: none;
+      }
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
     }
     .popover {
       position: absolute;
@@ -276,20 +326,19 @@ main {
 
     ul {
       display: flex;
-      gap: 20px;
+      gap: 40px;
       padding: 1rem 1rem 5px 1rem;
       overflow-x: scroll;
       width: 100%;
-      height: 70px;
+      flex-shrink: 0;
 
       li {
-        height: 100%;
         min-width: 50px;
         display: grid;
         place-items: center;
       }
       img {
-        height: 100%;
+        height: 70px;
       }
 
       &::-webkit-scrollbar {
@@ -300,12 +349,12 @@ main {
 }
 
 .list-projects {
-  /* margin-top: auto; */
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 50px;
   width: 100%;
-  height: 130px;
+
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.486));
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -322,8 +371,6 @@ main {
   }
 
   li {
-    width: 100px;
-    aspect-ratio: 1;
     flex-shrink: 0;
     box-shadow: 0 2px 7px 0 rgba(31, 38, 135, 0.37);
     border-radius: 100%;
@@ -336,8 +383,7 @@ main {
     }
 
     .image-project {
-      width: 100%;
-      height: 100%;
+      height: clamp(110px, 15vh, 180px);
       aspect-ratio: 1;
     }
   }

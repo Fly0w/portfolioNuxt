@@ -18,7 +18,7 @@
         <NuxtImg src="/icons/instagram.svg" height="60px" width="60px"
       /></NuxtLink>
       <NuxtLink
-        to="https://line.me/R/@florian.jp.fr"
+        to="https://line.me/R/@florian.ja.fr"
         target="_blank"
         class="blob6 hover:scale-110"
         ><NuxtImg src="/icons/line.svg" height="60px" width="60px"
