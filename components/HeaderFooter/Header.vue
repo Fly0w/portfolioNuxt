@@ -7,43 +7,85 @@
         class="flex flex-row justify-center gap-12 items-center text-lg text-ttextPrimary"
       >
         <li>
-          <NuxtLink class="" to="#landing-section">Presentation</NuxtLink>
+          <NuxtLink class="" to="#landing-section">{{
+            headerData.Presentation[lang]
+          }}</NuxtLink>
         </li>
-        <li><NuxtLink class="" to="#curriculum">Curriculum</NuxtLink></li>
-        <li><NuxtLink class="" to="#values">Values</NuxtLink></li>
-        <li><NuxtLink class="" to="#projects">Projects</NuxtLink></li>
-        <li><NuxtLink class="" to="#skills">Skills</NuxtLink></li>
-        <li><NuxtLink class="" to="#contacts">Contact</NuxtLink></li>
-        <li><NuxtLink class="" to="#downloads">Downloads</NuxtLink></li>
-        <button type="button" @click="updateQuery('fr')">FR</button>
-        <button type="button" @click="updateQuery('en')">EN</button>
-        <button type="button" @click="updateQuery('ja')">JP</button>
+        <li>
+          <NuxtLink class="" to="#curriculum">{{
+            headerData.Curriculum[lang]
+          }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="" to="#values">{{
+            headerData.Values[lang]
+          }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="" to="#projects">{{
+            headerData.Projects[lang]
+          }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="" to="#skills">{{
+            headerData.Skills[lang]
+          }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="" to="#contacts">{{
+            headerData.Contact[lang]
+          }}</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="" to="#downloads">{{
+            headerData.Downloads[lang]
+          }}</NuxtLink>
+        </li>
+        <v-menu location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn elevation="0" color="transparent" v-bind="props">
+              <v-icon color="blue" icon="mdi-web" size="large"></v-icon>
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-item @click="updateQuery('fr')">
+              <button>Français</button>
+            </v-list-item>
+            <v-list-item @click="updateQuery('en')">
+              <button>English</button>
+            </v-list-item>
+            <v-list-item @click="updateQuery('ja')">
+              <button>日本語</button>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </ul>
     </nav>
   </header>
 </template>
 
-<script setup lang="ts">
-const updateQuery = (lang: string) => {
-  useState("lang").value = lang;
-  setLanguage(lang);
+<script setup>
+const lang = useState("lang");
+
+const headerData = useHeaderData();
+
+const updateQuery = (language) => {
+  lang.value = language;
+  setLanguage(language);
 };
 
-function setLanguage(lang: string) {
+function setLanguage(language) {
   useHead({
     htmlAttrs: {
-      lang,
+      language,
     },
   });
 }
 </script>
 
 <style scoped>
-nav {
-  filter: contrast(2) drop-shadow(1px 1px 3px rgb(255, 255, 255));
-}
-
 header {
-  background: linear-gradient(to top, transparent, rgba(160, 160, 160, 0.322));
+  background: linear-gradient(to top, transparent, rgba(155, 155, 155, 0.486));
 }
 </style>

@@ -1,34 +1,34 @@
 <template>
   <section id="values">
-    <h3 class="section-header font-tertiary">Values</h3>
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <main class="content">
       <div class="selected-content">
-        <h4>{{ textData.title }}</h4>
-        <h5>{{ textData.subtitle }}</h5>
-        <p>{{ textData.text }}</p>
+        <h4>{{ valuesData[selectedValue].title[lang] }}</h4>
+        <h5>{{ valuesData[selectedValue].subtitle[lang] }}</h5>
+        <p>{{ valuesData[selectedValue].description[lang] }}</p>
       </div>
       <div class="selector">
         <div class="circle-relative">
           <button
             type="button"
             class="value-box value1"
-            @click="selectedValue = 'value1'"
+            @click="selectedValue = 'Teamwork'"
           >
-            Teamwork
+            {{ valuesData.Teamwork.title[lang] }}
           </button>
           <button
             type="button"
             class="value-box value2"
-            @click="selectedValue = 'value2'"
+            @click="selectedValue = 'Fun'"
           >
-            Fun
+            {{ valuesData.Fun.title[lang] }}
           </button>
           <button
             type="button"
             class="value-box value3"
-            @click="selectedValue = 'value3'"
+            @click="selectedValue = 'SelfImprovement'"
           >
-            Self-Improvement
+            {{ valuesData.SelfImprovement.title[lang] }}
           </button>
         </div>
       </div>
@@ -36,44 +36,17 @@
   </section>
 </template>
 
-<script setup lang="ts">
-const selectedValue = ref("value1");
+<script setup>
+const lang = useState("lang");
+const selectedValue = ref("Teamwork");
 
-const textData = computed(() => {
-  switch (selectedValue.value) {
-    case "value1":
-      return {
-        title: "Teamwork",
-        subtitle: `Alone, you go faster. Together, you go further.`,
-        text: `In both my professional and personal life, I have always placed great importance on achieving things alongside others. To me, success holds little value if it cannot be shared—whether it’s celebrating victories or learning from setbacks. That’s why I consistently strive to listen to those around me, gathering valuable insights, sharing my perspective, and ensuring I fully understand theirs. This, to me, is the essence of teamwork.`,
-        pictures: [],
-      };
+const valuesData = useValuesData();
 
-    case "value2":
-      return {
-        title: "Fun",
-        subtitle: `Life is short — let's make the most of it !`,
-        text: `I firmly believe that it’s possible to have fun in any situation while maintaining the right balance of seriousness to get the job done. Whether at work or with friends, I deeply value the moments I share with those around me, as they help build connection, trust, and collaboration. Cultivating meaningful relationships not only enhances the enjoyment of experiences but also fosters an environment where everyone feels supported and inspired to bring their best selves to the table.`,
-        pictures: [],
-      };
-
-    case "value3":
-      return {
-        title: "Self-Improvement",
-        subtitle: "Become the best version of yourself. ",
-        text: `Certainly, the value I hold most dear, and have followed since childhood, is personal growth. Every day, I strive to become a better version of myself—not only by learning technical skills or acquiring new knowledge but also by stepping out of my comfort zone and adapting to diverse environments and cultures. As a human being and a member of society, my goal is to evolve into a reliable and trustworthy individual.`,
-        pictures: [],
-      };
-
-    default:
-      return {
-        title: "",
-        subtitle: "",
-        text: "",
-        pictures: [],
-      };
-  }
-});
+const title = {
+  fr: "Valeurs",
+  en: "Values",
+  ja: "価値",
+};
 </script>
 
 <style scoped>

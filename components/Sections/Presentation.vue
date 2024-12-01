@@ -1,10 +1,15 @@
 <template>
   <section id="landing-section">
     <header>
-      <h1 class="font-secondary">Florian Budniewski</h1>
-      <h2 class="font-tertiary">Welcome to my frontend developer portfolio</h2>
+      <div>
+        <h1 class="font-secondary">{{ dataPresentation.name.fr }}</h1>
+        <h3 v-if="lang === 'ja'" class="font-tertiary">
+          {{ dataPresentation.name.ja }}
+        </h3>
+      </div>
+      <h2 class="font-tertiary">{{ dataPresentation.title[lang] }}</h2>
       <NuxtLink to="#projects" class="projects-button font-primary">
-        View my projects
+        {{ dataPresentation.button[lang] }}
         <NuxtImg
           class="icon-right"
           alt="right arrow"
@@ -22,7 +27,11 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+const lang = useState("lang");
+
+const dataPresentation = usePresentationData();
+</script>
 
 <style scoped>
 section {
@@ -32,6 +41,7 @@ section {
 #landing-section {
   display: flex;
   justify-content: end;
+  gap: 50px;
 }
 
 header {
@@ -43,7 +53,7 @@ header {
 
   h1,
   h2 {
-    font-size: clamp(30px, 5vw, 100px);
+    font-size: clamp(30px, 5vw, 80px);
   }
   h1 {
     letter-spacing: 3px;
@@ -51,7 +61,6 @@ header {
 
   .projects-button {
     align-self: self-start;
-    font-size: 1.5vw;
     font-size: clamp(16px, 1.5vw, 42px);
     display: flex;
     gap: 15px;

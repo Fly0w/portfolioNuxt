@@ -9,10 +9,10 @@
     <Projects />
     <!-- <Wave colorBg="bg-slate-50" /> -->
     <Skills class="bg-slate-50" />
-    <Wave colorBg="bg-slate-50" />
+    <!-- <Wave colorBg="bg-slate-50" /> -->
+    <Downloads class="bg-slate-50" />
     <Contacts class="bg-tprimary" />
     <!-- <Wave colorBg="bg-tprimary" /> -->
-    <Downloads class="bg-slate-50" />
   </v-main>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <section id="curriculum">
-    <h3 class="section-header font-tertiary">Curriculum</h3>
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <v-timeline
       :align="$viewport.isGreaterOrEquals('md') ? 'start' : 'start'"
       class="timeline"
@@ -14,14 +14,20 @@
         icon="mdi-school-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">Sept 2014</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item1.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Sept 2014
+          {{ curriculumData.item1.date[lang] }}
         </h5>
         <div>
-          <h5 class="font-tertiary font-bold">Engineering school student</h5>
-          <h6 class="font-tertiary">Polytech'Lille Engineering School</h6>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item1.title[lang] }}
+          </h5>
+          <h6 class="font-tertiary">
+            {{ curriculumData.item1.subtitle[lang] }}
+          </h6>
         </div>
       </v-timeline-item>
 
@@ -31,23 +37,24 @@
         icon="mdi-briefcase-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">September 2018</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item2.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Sept 2018
+          {{ curriculumData.item2.date[lang] }}
         </h5>
 
         <div>
           <h5 class="font-tertiary font-bold">
-            Research and Development Engineer
+            {{ curriculumData.item2.title[lang] }}
           </h5>
-          <h6 class="font-tertiary">SEFAR Inc.</h6>
+          <h6 class="font-tertiary">
+            {{ curriculumData.item2.subtitle[lang] }}
+          </h6>
 
           <p class="md:text-lg sm:text-sm font-tertiary">
-            In the industrial filtering cloth manufacturing industry, I was in
-            charge of the development, test, and implementation of new products
-            and processes to help customers getting better results and improving
-            their filtering processes efficiency.
+            {{ curriculumData.item2.description[lang] }}
           </p>
         </div>
       </v-timeline-item>
@@ -58,14 +65,16 @@
         icon="mdi-file-certificate-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">July 2019</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item3.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Jul 2019
+          {{ curriculumData.item3.date[lang] }}
         </h5>
 
         <h5 class="font-tertiary font-bold">
-          Materials Science Engineering Master's Degree
+          {{ curriculumData.item3.title[lang] }}
         </h5>
       </v-timeline-item>
 
@@ -75,17 +84,21 @@
         icon="mdi-school-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">April 2022</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item4.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Apr 2022
+          {{ curriculumData.item4.date[lang] }}
         </h5>
 
         <div>
           <h5 class="font-tertiary font-bold">
-            Japanese language school student
+            {{ curriculumData.item4.title[lang] }}
           </h5>
-          <h6 class="font-tertiary">Tokyo Central Japanese Language School</h6>
+          <h6 class="font-tertiary">
+            {{ curriculumData.item4.subtitle[lang] }}
+          </h6>
         </div>
       </v-timeline-item>
 
@@ -95,13 +108,15 @@
         icon="mdi-file-certificate-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">July 2023</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item5.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Jul 2023
+          {{ curriculumData.item5.date[lang] }}
         </h5>
 
-        <h5>JLPT N2</h5>
+        <h5>{{ curriculumData.item5.title[lang] }}</h5>
       </v-timeline-item>
       <v-timeline-item
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
@@ -109,26 +124,24 @@
         icon="mdi-briefcase-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">October 2023</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item6.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Oct 2023
+          {{ curriculumData.item6.date[lang] }}
         </h5>
 
         <div>
-          <h5 class="font-tertiary font-bold">Web Engineer</h5>
-          <h6 v-if="lang === 'ja'" class="font-tertiary">
-            株式会社イーグロース
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item6.title[lang] }}
+          </h5>
+          <h6 class="font-tertiary">
+            {{ curriculumData.item6.subtitle[lang] }}
           </h6>
-          <h6 v-else class="font-tertiary">E-growth Inc.</h6>
 
           <p class="md:text-lg sm:text-sm font-tertiary">
-            As a web engineer, I was in charge of testing the existing features
-            of the projects I was engaged in, as well as implementing new core
-            elements by using technologies such as PHP and Laravel, but also
-            MySQL. By using both English and Japanese languages, I was able to
-            facilitate the link between the people working from outside Japan,
-            and the Japanese team.
+            {{ curriculumData.item6.description[lang] }}
           </p>
         </div>
       </v-timeline-item>
@@ -139,26 +152,24 @@
         icon="mdi-briefcase-outline"
       >
         <template v-if="$viewport.isGreaterOrEquals('md')" v-slot:opposite>
-          <h5 class="font-tertiary font-bold">April 2024</h5>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item7.date[lang] }}
+          </h5>
         </template>
         <h5 v-if="$viewport.isLessThan('md')" class="font-tertiary font-bold">
-          Apr 2024
+          {{ curriculumData.item7.date[lang] }}
         </h5>
 
         <div>
-          <h5 class="font-tertiary font-bold">Frontend Engineer</h5>
-          <h6 v-if="lang === 'ja'" class="font-tertiary">株式会社INVEST</h6>
-          <h6 v-else class="font-tertiary">INVEST Inc.</h6>
+          <h5 class="font-tertiary font-bold">
+            {{ curriculumData.item7.title[lang] }}
+          </h5>
+          <h6 class="font-tertiary">
+            {{ curriculumData.item7.subtitle[lang] }}
+          </h6>
 
           <p class="md:text-lg sm:text-sm font-tertiary">
-            As a frontend engineer, I worked on several projects including a
-            time tracking system for employees, a second-hand high brand
-            reselling platform, or a CtoC education related service web
-            application. Here, I was in charge of the frontend side of each
-            projects, defining and implementing backend APIs, turning Figma
-            templates into usable web applications by taking advantage of the
-            latest frontend technologies such as VueJS and NuxtJS, or UI
-            component libraries such as Vuetify or Bootstrap.
+            {{ curriculumData.item7.description[lang] }}
           </p>
         </div>
       </v-timeline-item>
@@ -174,10 +185,16 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const lang = useState("lang");
 
-console.log(lang.value);
+const curriculumData = useCurriculumData();
+
+const title = {
+  fr: "Historique professionnel",
+  en: "Curriculum",
+  ja: "カリキュラム",
+};
 </script>
 
 <style scoped>

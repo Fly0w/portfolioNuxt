@@ -1,6 +1,6 @@
 <template>
   <section id="contacts">
-    <h3 class="section-header font-tertiary">Contacts</h3>
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <div
       class="flex flex-row flex-wrap justify-center gap-20 items-center h-5/6"
     >
@@ -40,11 +40,19 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+const lang = useState("lang");
+const title = {
+  fr: "Contacts",
+  en: "Contacts",
+  ja: "連絡",
+};
+</script>
 
 <style scoped>
 #contacts {
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
+  padding-block: 50px;
 }
 .section-header {
   color: var(--neutral);

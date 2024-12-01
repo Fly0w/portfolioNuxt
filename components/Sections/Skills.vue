@@ -1,6 +1,6 @@
 <template>
   <section id="skills">
-    <h3 class="section-header font-tertiary">Skills</h3>
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <div class="skill-container">
       <div class="skill-display">
         <NuxtImg
@@ -17,7 +17,7 @@
       </div>
       <div class="skill-list-card">
         <div class="skill-list">
-          <h4>Used before</h4>
+          <h4>{{ categories.used[lang] }}</h4>
           <ul>
             <li
               v-for="skill in listSkills.used"
@@ -43,7 +43,7 @@
           </ul>
         </div>
         <div class="skill-list">
-          <h4>Learning</h4>
+          <h4>{{ categories.learn[lang] }}</h4>
           <ul>
             <li
               v-for="skill in listSkills.learning"
@@ -69,7 +69,7 @@
           </ul>
         </div>
         <div class="skill-list">
-          <h4>Interested in</h4>
+          <h4>{{ categories.interest[lang] }}</h4>
           <ul>
             <li
               v-for="skill in listSkills.interested"
@@ -106,11 +106,36 @@
   </section>
 </template>
 
-<script setup lang="ts">
-const lang = useState<string>("lang");
+<script setup>
+const lang = useState("lang");
 const hoveredCategory = ref("");
 const hoveredSkill = ref("");
 const selectedSkill = ref("nuxt");
+
+const title = {
+  fr: "Tech Stack",
+  en: "Tech Stack",
+  ja: "技術",
+};
+
+const categories = {
+  used: {
+    fr: "Déjà utilisé",
+    en: "Used before",
+    ja: "経験がある",
+  },
+
+  learn: {
+    fr: "En cours d'apprentissage",
+    en: "Learning",
+    ja: "勉強中",
+  },
+  interest: {
+    fr: "Interessé",
+    en: "Interested in",
+    ja: "興味がある",
+  },
+};
 
 const listSkills = {
   used: [
@@ -143,24 +168,28 @@ const listSkills = {
 <style scoped>
 #skills {
   padding-block: 50px;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .skill-container {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
   gap: 50px;
+  height: 100%;
 
   .skill-display {
-    flex: 1;
+    flex: 1.4;
     max-width: 1080px;
     display: flex;
     gap: 10px;
     flex-direction: column;
     justify-content: center;
+    max-height: 100%;
+    overflow: hidden;
 
     img {
       height: 300px;
@@ -176,33 +205,34 @@ const listSkills = {
       font-family: "Raleway", "sans-serif";
 
       h3 {
-        font-size: 80px;
+        font-size: clamp(40px, 3.5vw, 80px);
         color: var(--primary);
       }
 
       h4 {
-        font-size: 35px;
+        font-size: clamp(20px, 2.5vw, 30px);
         font-weight: bold;
         max-width: 60%;
       }
 
       p {
-        font-size: larger;
-        width: 90%;
+        font-size: clamp(14px, 1.5vw, 20px);
+        /* width: 90%; */
         letter-spacing: 0.5px;
-        max-width: 60%;
+        /* max-width: 60%; */
       }
     }
   }
   .skill-list-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     border-radius: 30px;
     border: 2px solid var(--neutral);
     background-color: white;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    padding: 1rem;
+    padding: 2rem;
     width: 400px;
-    display: flex;
-    flex-direction: column;
     gap: 30px;
     .skill-list {
       h4 {

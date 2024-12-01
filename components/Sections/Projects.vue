@@ -3,12 +3,12 @@
     id="projects"
     :style="{ backgroundImage: `url('/gif/${selectedProject}.gif')` }"
   >
-    <h3 class="section-header font-tertiary">Projects</h3>
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <main>
       <div class="project-card">
-        <h3>{{ listProjects[selectedProject].title }}</h3>
-        <h4>{{ listProjects[selectedProject].subtitle }}</h4>
-        <p>{{ listProjects[selectedProject].description }}</p>
+        <h3>{{ listProjects[selectedProject].title[lang] }}</h3>
+        <h4>{{ listProjects[selectedProject].subtitle[lang] }}</h4>
+        <p>{{ listProjects[selectedProject].description[lang] }}</p>
         <ul ref="listTools">
           <li
             class="tool-list"
@@ -35,8 +35,20 @@
         </p>
       </div>
       <div class="buttons">
-        <NuxtLink :to="``" class="redirect">Github</NuxtLink>
-        <NuxtLink :to="``" class="redirect">Visit</NuxtLink>
+        <NuxtLink
+          v-if="listProjects[selectedProject].githubLink !== ''"
+          :to="listProjects[selectedProject].githubLink"
+          class="redirect"
+          target="_blank"
+          >{{ textButtons.githubButton[lang] }}</NuxtLink
+        >
+        <NuxtLink
+          v-if="listProjects[selectedProject].pageLink !== ''"
+          :to="listProjects[selectedProject].pageLink"
+          class="redirect"
+          target="_blank"
+          >{{ textButtons.visitButton[lang] }}</NuxtLink
+        >
       </div>
     </main>
     <ul
@@ -65,14 +77,33 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-const selectedProject = ref<keyof typeof listProjects.value>("KidsJapan");
+<script setup>
+const listProjects = useProjectsData();
+const selectedProject = ref("KidsJapan");
 const isDragging = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
 const isHover = ref("");
 
-const listTools = ref<HTMLElement | any>(null);
+const textButtons = {
+  githubButton: {
+    fr: "GitHub",
+    en: "GitHub",
+    ja: "GitHub",
+  },
+  visitButton: {
+    fr: "Visiter",
+    en: "Visit",
+    ja: "サイトへ",
+  },
+};
+
+const title = {
+  fr: "Projets",
+  en: "Projects",
+  ja: "プロジェクト",
+};
+const listTools = ref(null);
 watch(
   selectedProject,
   () => {
@@ -83,18 +114,16 @@ watch(
   { immediate: true }
 );
 
-const lang = useState<string>("lang");
+const lang = useState("lang");
 
-console.log(lang.value);
-
-function onDragStart(e: MouseEvent | TouchEvent) {
+function onDragStart(e) {
   isDragging.value = true;
 
   // Récupérer la position de départ
   const pageX = e instanceof TouchEvent ? e.touches[0].pageX : e.pageX;
 
   // Vérifier que e.currentTarget est bien défini et de type HTMLElement
-  const target = e.currentTarget as HTMLElement | null;
+  const target = e.currentTarget;
   if (!target) return;
 
   startX.value = pageX - target.scrollLeft;
@@ -103,7 +132,7 @@ function onDragStart(e: MouseEvent | TouchEvent) {
   scrollLeft.value = target.scrollLeft;
 }
 
-function onDragMove(e: MouseEvent | TouchEvent) {
+function onDragMove(e) {
   if (!isDragging.value) return;
 
   // Bloquer les comportements par défaut (ex. scroll classique sur mobile)
@@ -113,84 +142,13 @@ function onDragMove(e: MouseEvent | TouchEvent) {
   const pageX = e instanceof TouchEvent ? e.touches[0].pageX : e.pageX;
   const deltaX = pageX - startX.value;
 
-  const container = e.currentTarget as HTMLElement;
+  const container = e.currentTarget;
   container.scrollLeft = scrollLeft.value - deltaX;
 }
 
 function onDragEnd() {
   isDragging.value = false;
 }
-
-const listProjects = computed(() => {
-  // TODO need to add translation
-  return {
-    KidsJapan: {
-      title: "KidsJapan",
-      subtitle: "C2C educational platform providing lessons for kids",
-      description:
-        "KidsJapan is a website where anyone can register as a teacher and post private lessons for children under 14 years old. The web application includes many useful features such as real-time chat, an interactive map to find lessons in the desired area, real-time video streaming for online lessons, and more.",
-      tools: ["html", "css", "vueJS", "nuxt", "vuetify", "bootstrap", "seo"],
-    },
-    BrandJapan: {
-      title: "BrandJapan",
-      subtitle: "Second-hand high-brand listing platform",
-      description:
-        "BrandJapan is a platform where users can buy and sell second-hand high-end apparel items such as bags, clothes, and accessories. As a member of the development team, I worked on the 'My Page' section of the website, where customers can apply to list their items, which are then assessed by an administrator.",
-      tools: ["html", "css", "javascript", "bootstrap"],
-    },
-    ShareHouseManager: {
-      title: "Share House Manager",
-      subtitle: "Sharehouse life organizer",
-      description:
-        "This app was created to help tenants of a sharehouse track their duties, such as buying common groceries, paying the monthly community fee, following the garbage duty rotation, or monitoring shared bicycle usage. Developed with ViteJS/VueJS, the app provides an excellent visual interface without compromising performance. The use of a next-generation database like Firebase ensures reliable data traffic and ease of maintenance. It was developed for my former sharehouse and is still in use today.",
-      tools: ["html", "css", "vueJS", "firebase", "tailwindCSS", "vercel"],
-    },
-    Promptopia: {
-      title: "Promptopia",
-      subtitle: "An AI prompt sharing social network",
-      description:
-        "Share your best ChatGPT prompts with the Promptopia community! Sign in using your Google account, then post and edit your best AI prompts with other users. This app is built with NextJS to ensure fast page and image load times, as well as easy website routing.",
-      tools: [
-        "html",
-        "css",
-        "reactJS",
-        "nextJS",
-        "mongoDB",
-        "tailwindCSS",
-        "vercel",
-      ],
-    },
-    OmoteBike: {
-      title: "OmoteBike",
-      subtitle: "Keep track of shared bicycle status",
-      description:
-        "A NextJS web app to manage and keep track of a share house's shared bike. Easy to use, it allows users to know exactly when the bike is in use or unavailable.",
-      tools: [
-        "html",
-        "css",
-        "reactJS",
-        "nextJS",
-        "mongoDB",
-        "tailwindCSS",
-        "vercel",
-      ],
-    },
-    Robofriends: {
-      title: "Robofriends",
-      subtitle: "Keep track of your robot friends",
-      description:
-        "A basic ReactJS app I created following a tutorial in the Zero To Mastery program. The app generates individual cards for each customer/robot with their personal information. The search bar updates dynamically as the user types.",
-      tools: ["html", "css", "reactJS"],
-    },
-    FacetoFace: {
-      title: "Face to Face",
-      subtitle: "Detect faces within images",
-      description:
-        "A ReactJS app that allows you to detect faces in an image by providing a URL. You must first register to create your profile, and then scan as many face images as you like.",
-      tools: ["html", "css", "reactJS", "postgreSQL"],
-    },
-  };
-});
 </script>
 
 <style scoped>

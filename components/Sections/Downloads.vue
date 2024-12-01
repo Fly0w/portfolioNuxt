@@ -23,6 +23,7 @@
 
 <script lang="ts" setup>
 const lang = useState("lang");
+
 const textdata = computed(() => {
   switch (lang.value) {
     case "en":
@@ -38,7 +39,7 @@ const textdata = computed(() => {
         title: "Téléchargements",
         rireki: "Resume (jp)",
         cv: "CV (en)",
-        shokumu: "Historique professionnel (jp)",
+        shokumu: "CV (jp)",
       };
 
     case "ja":
