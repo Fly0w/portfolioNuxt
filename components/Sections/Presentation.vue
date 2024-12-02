@@ -14,8 +14,6 @@
           class="icon-right"
           alt="right arrow"
           src="/icons/arrow-right.svg"
-          height="30px"
-          width="30px"
         />
       </NuxtLink>
     </header>
@@ -53,16 +51,22 @@ header {
 
   h1,
   h2 {
-    font-size: clamp(30px, 5vw, 80px);
+    font-size: clamp(30px, 5vw, 70px);
   }
   h1 {
     letter-spacing: 3px;
   }
 
+  h2 {
+    max-width: 90%;
+  }
+
   .projects-button {
-    align-self: self-start;
-    font-size: clamp(16px, 1.5vw, 42px);
+    margin-top: 20px;
+    width: fit-content;
+    font-size: clamp(16px, 1.5vw, 36px);
     display: flex;
+    align-items: center;
     gap: 15px;
 
     transition: all 0.3s ease-in-out;
@@ -70,13 +74,56 @@ header {
     &:hover {
       gap: 50px;
     }
+
+    .icon-right {
+      height: 30px;
+      width: 30px;
+    }
   }
 }
 .img-florian {
-  width: 100%; /* ou une largeur maximale fixe */
   width: clamp(200px, 40vw, 400px); /* Limite la largeur */
   height: auto; /* Garde le ratio de l'image */
   object-fit: contain; /* Évite l’étirement en gardant l’image dans ses limites */
   flex-shrink: 0; /* Empêche la réduction de l'image dans le flex */
+}
+
+@media screen and (max-width: 768.98px) {
+  section {
+    padding: 2rem 0 0rem 2rem;
+  }
+
+  #landing-section {
+    gap: 20px;
+  }
+
+  header {
+    gap: 30px;
+
+    h1 {
+      font-size: clamp(30px, 10vw, 40px);
+    }
+
+    h2 {
+      font-size: clamp(20px, 5vw, 40px);
+    }
+
+    .projects-button {
+      font-size: clamp(12px, 1.5vw, 24px);
+
+      &:hover {
+        gap: 15px;
+      }
+
+      .icon-right {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  .img-florian {
+    width: clamp(100px, 35vw, 300px); /* Limite la largeur */
+  }
 }
 </style>

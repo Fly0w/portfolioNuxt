@@ -7,7 +7,7 @@
         <h5>{{ valuesData[selectedValue].subtitle[lang] }}</h5>
         <p>{{ valuesData[selectedValue].description[lang] }}</p>
       </div>
-      <div class="selector">
+      <div v-if="$viewport.isGreaterOrEquals('md')" class="selector">
         <div class="circle-relative">
           <button
             type="button"
@@ -30,6 +30,32 @@
           >
             {{ valuesData.SelfImprovement.title[lang] }}
           </button>
+        </div>
+      </div>
+      <div v-else class="selector-mobile">
+        <div class="circle-relative">
+          <button
+            type="button"
+            class="value-box value1"
+            @click="selectedValue = 'Teamwork'"
+          >
+            {{ valuesData.Teamwork.title[lang] }}
+          </button>
+          <button
+            type="button"
+            class="value-box value2"
+            @click="selectedValue = 'Fun'"
+          >
+            {{ valuesData.Fun.title[lang] }}
+          </button>
+          <button
+            type="button"
+            class="value-box value3"
+            @click="selectedValue = 'SelfImprovement'"
+          >
+            {{ valuesData.SelfImprovement.title[lang] }}
+          </button>
+          <div class="line"></div>
         </div>
       </div>
     </main>
@@ -131,6 +157,73 @@ const title = {
     .value3 {
       bottom: 0px;
       left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 768.98px) {
+  #values {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: relative;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .selected-content {
+    flex: 1;
+    font-family: "Raleway", "sans-serif";
+
+    h4 {
+      font-size: 40px;
+    }
+
+    h5 {
+      margin-top: 10px;
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  }
+
+  .selector-mobile {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    .circle-relative {
+      display: flex;
+      justify-content: space-around;
+
+      .value-box {
+        display: grid;
+        place-items: center;
+        width: 90px;
+        aspect-ratio: 1;
+        outline: 1px white solid;
+        outline-offset: -3px;
+        border-radius: 100%;
+        background-color: var(--tertiary);
+        box-shadow: 5px 0px 5px #36363649;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+        color: white;
+        font-family: "Questrial", "sans-serif";
+        font-size: 12px;
+        z-index: 2;
+      }
+      .line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        border: solid 1px var(--primary);
+        z-index: 0;
+      }
     }
   }
 }

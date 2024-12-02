@@ -1,8 +1,10 @@
 <template>
   <div class="test">
-    <Header />
-    <slot />
-    <Footer />
+    <v-layout>
+      <Header />
+      <slot />
+      <Footer
+    /></v-layout>
   </div>
 </template>
 

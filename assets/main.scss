@@ -55,6 +55,11 @@ section:not(:first-of-type) {
   background-color: var(--secondary);
 }
 
+.v-fab__container {
+  right: 10px;
+  top: 10px;
+}
+
 @media screen and (max-width: 768.98px) {
   section {
     padding-inline: 1rem;

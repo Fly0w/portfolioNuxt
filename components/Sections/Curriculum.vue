@@ -9,6 +9,7 @@
       size="large"
     >
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="blue"
         icon="mdi-school-outline"
@@ -32,6 +33,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="pink"
         icon="mdi-briefcase-outline"
@@ -60,6 +62,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="green"
         icon="mdi-file-certificate-outline"
@@ -79,6 +82,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="blue"
         icon="mdi-school-outline"
@@ -103,6 +107,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="green"
         icon="mdi-file-certificate-outline"
@@ -119,6 +124,7 @@
         <h5>{{ curriculumData.item5.title[lang] }}</h5>
       </v-timeline-item>
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="pink"
         icon="mdi-briefcase-outline"
@@ -147,6 +153,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="pink"
         icon="mdi-briefcase-outline"
@@ -175,6 +182,7 @@
       </v-timeline-item>
 
       <v-timeline-item
+        :size="$viewport.isGreaterOrEquals('md') ? 'large' : 'small'"
         :min-height="$viewport.isGreaterOrEquals('md') ? '100px' : '70px'"
         dot-color="deep-orange"
         icon="mdi-map-marker-check-outline"
@@ -225,8 +233,25 @@ p {
 }
 
 @media screen and (max-width: 768.98px) {
+  .timeline {
+    color: var(--neutral);
+    padding-top: 1rem;
+  }
+  h6 {
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.0125em;
+  }
+
   h5 {
+    font-size: 1.25rem;
+    line-height: 1.333;
+    letter-spacing: normal;
     padding-top: 7px;
+  }
+
+  p {
+    line-height: 1.3;
   }
 }
 </style>
