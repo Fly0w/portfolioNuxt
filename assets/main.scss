@@ -71,3 +71,9 @@ section:not(:first-of-type) {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .section-header {
+    font-size: 36px;
+  }
+}

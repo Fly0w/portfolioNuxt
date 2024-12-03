@@ -33,13 +33,13 @@
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink class="" to="#contacts">{{
-              headerData.Contact[lang]
+            <NuxtLink class="" to="#downloads">{{
+              headerData.Downloads[lang]
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink class="" to="#downloads">{{
-              headerData.Downloads[lang]
+            <NuxtLink class="" to="#contacts">{{
+              headerData.Contact[lang]
             }}</NuxtLink>
           </li>
           <v-menu location="bottom">
@@ -107,13 +107,13 @@
           }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="" to="#contacts">{{
-            headerData.Contact[lang]
+          <NuxtLink class="" to="#downloads">{{
+            headerData.Downloads[lang]
           }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="" to="#downloads">{{
-            headerData.Downloads[lang]
+          <NuxtLink class="" to="#contacts">{{
+            headerData.Contact[lang]
           }}</NuxtLink>
         </li>
       </ul>

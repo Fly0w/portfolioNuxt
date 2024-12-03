@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="$viewport.isGreaterThan('sm')"
     id="projects"
     :style="{ backgroundImage: `url('/gif/${selectedProject}.gif')` }"
   >
@@ -74,6 +75,73 @@
         />
       </li>
     </ul>
+  </section>
+  <section v-else id="projects" class="bg-slate-50">
+    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <div class="main-content">
+      <ul class="list-projects-phone">
+        <li
+          v-for="(project, title) in listProjects"
+          :key="title"
+          @click="selectedProject = title"
+        >
+          <NuxtImg
+            class="image-project-phone"
+            :src="`/img/${title}.jpg`"
+            :alt="title"
+            draggable="false"
+          />
+        </li>
+      </ul>
+
+      <img :src="`/gif/${selectedProject}.gif`" />
+      <div class="project-card-phone">
+        <h3>{{ listProjects[selectedProject].title[lang] }}</h3>
+        <h4>{{ listProjects[selectedProject].subtitle[lang] }}</h4>
+        <p>{{ listProjects[selectedProject].description[lang] }}</p>
+        <ul ref="listTools">
+          <li
+            class="tool-list"
+            v-for="tool in listProjects[selectedProject].tools"
+            :key="tool"
+            :style="`anchor-name: --projects-${tool}`"
+          >
+            <NuxtImg
+              class="image-project"
+              :src="iconsData()[tool]?.icon"
+              :alt="iconsData()[tool]?.iconText"
+              draggable="false"
+              @mouseenter="isHover = tool"
+              @mouseleave="isHover = ''"
+            />
+          </li>
+        </ul>
+        <p
+          v-if="isHover !== ''"
+          class="popover"
+          :style="`position-anchor: --projects-${isHover}`"
+        >
+          {{ iconsData()[isHover].iconText }}
+        </p>
+      </div>
+
+      <div class="buttons-phone">
+        <NuxtLink
+          v-if="listProjects[selectedProject].githubLink !== ''"
+          :to="listProjects[selectedProject].githubLink"
+          class="redirect"
+          target="_blank"
+          >{{ textButtons.githubButton[lang] }}</NuxtLink
+        >
+        <NuxtLink
+          v-if="listProjects[selectedProject].pageLink !== ''"
+          :to="listProjects[selectedProject].pageLink"
+          class="redirect"
+          target="_blank"
+          >{{ textButtons.visitButton[lang] }}</NuxtLink
+        >
+      </div>
+    </div>
   </section>
 </template>
 
@@ -343,6 +411,162 @@ main {
     .image-project {
       height: clamp(110px, 15vh, 180px);
       aspect-ratio: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 768.98px) {
+  #projects {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding: 0 0 1rem 0;
+    background-color: var(--primary);
+    height: auto;
+  }
+
+  #projects::before {
+    background: none; /* Filtre noir semi-transparent */
+    z-index: -1; /* Place la superposition au-dessus du fond */
+  }
+
+  .section-header {
+    color: var(--neutral);
+    padding: 1rem;
+    background: none;
+    text-align: center;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Cache le débordement éventuel */
+
+    font-family: "Questrial", "sans-serif";
+    height: 100%;
+  }
+  .list-projects-phone {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    padding: 0.75rem;
+    overflow-y: scroll;
+    flex-shrink: 0;
+
+    background-color: var(--neutral);
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+
+    li {
+      flex-shrink: 0;
+      box-shadow: 0 2px 7px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      .image-project-phone {
+        height: 60px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+  .project-card-phone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--neutral);
+
+    word-wrap: break-word; /* Permet de couper les mots trop longs */
+    overflow-wrap: break-word; /* Support étendu */
+    hyphens: auto; /* Ajoute un tiret automatique lors de la coupure */
+    padding: 1rem;
+    width: 100%;
+
+    h3 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    h4 {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-size: 12px;
+      flex-shrink: 1;
+      overflow-y: scroll;
+      max-height: calc(
+        100% - 120px
+      ); /* Ajuste selon les autres éléments (titres, padding) */
+
+      &::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border: none;
+      }
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+    }
+    .popover {
+      position: absolute;
+      bottom: calc(anchor(top) + 5px);
+      justify-self: anchor-center;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+      padding: 1rem 0.5rem;
+      overflow-x: scroll;
+      width: 100%;
+      flex-shrink: 0;
+      background-color: var(--neutral);
+      border-radius: 20px;
+
+      li {
+        min-width: 30px;
+        display: grid;
+        place-items: center;
+      }
+      img {
+        height: 30px;
+      }
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+    }
+  }
+
+  .buttons-phone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .redirect {
+      padding: 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: solid 2px white;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 20px;
     }
   }
 }

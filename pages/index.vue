@@ -25,6 +25,15 @@ import Skills from "~/components/Sections/Skills.vue";
 import Contacts from "~/components/Sections/Contacts.vue";
 import Downloads from "~/components/Sections/Downloads.vue";
 import Wave from "~/components/Utilities/Wave.vue";
+
+useSeoMeta({
+  title: "Florian Budniewski's Portfolio",
+  ogTitle: "Florian Budniewski's Portfolio",
+  description:
+    "Welcome to Florian Budniewski's Frontend Developper Portfolio. Learn more about my education, my career, my skills, or my projects !",
+  ogDescription:
+    "Welcome to Florian Budniewski's Frontend Developper Portfolio. Learn more about my education, my career, my skills, or my projects !",
+});
 </script>
 
 <style scoped></style>

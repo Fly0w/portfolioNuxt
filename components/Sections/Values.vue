@@ -7,7 +7,7 @@
         <h5>{{ valuesData[selectedValue].subtitle[lang] }}</h5>
         <p>{{ valuesData[selectedValue].description[lang] }}</p>
       </div>
-      <div v-if="$viewport.isGreaterOrEquals('md')" class="selector">
+      <div v-if="$viewport.isGreaterThan('sm')" class="selector">
         <div class="circle-relative">
           <button
             type="button"

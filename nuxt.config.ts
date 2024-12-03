@@ -10,6 +10,17 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en", // Définit la langue en français
       },
+      title: "Florian Budniewski",
+      meta: [
+        {
+          name: "Florian Buniewski's",
+          content:
+            "Welcome to Florian Budniewski's Frontend Developper Portfolio. Learn more about my education, my career, my skills, or my projects !",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }, // Remplacez par votre fichier si nécessaire
+      ],
     },
   },
   typescript: {
