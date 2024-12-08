@@ -148,7 +148,6 @@ const helperRef = ref(null); // Référence vers le helper invisible
 const isDarkColor = (rgb) => {
   const [r, g, b] = rgb;
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  console.log(brightness);
   return brightness < 156;
 };
 
