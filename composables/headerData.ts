@@ -1,5 +1,10 @@
 export const useHeaderData = () => {
   return {
+    Title: {
+      fr: "Menu",
+      en: "Menu",
+      ja: "メニュー",
+    },
     Presentation: {
       fr: "Home",
       en: "Home",

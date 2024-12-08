@@ -1,12 +1,8 @@
 <template>
   <div>
-    <header
-      class="flex flex-row justify-center fixed top-0 w-full z-10 font-primary"
-    >
-      <nav v-if="$viewport.isGreaterThan('md')" class="px-5 py-4">
-        <ul
-          class="flex flex-row justify-center gap-12 items-center text-lg text-ttextPrimary"
-        >
+    <header :class="headerClass" class="header">
+      <nav v-if="$viewport.isGreaterThan('md')">
+        <ul class="nav-elements">
           <li>
             <NuxtLink class="" to="#landing-section">{{
               headerData.Presentation[lang]
@@ -42,6 +38,7 @@
               headerData.Contact[lang]
             }}</NuxtLink>
           </li>
+
           <v-menu location="bottom">
             <template v-slot:activator="{ props }">
               <v-btn elevation="0" color="transparent" v-bind="props">
@@ -49,24 +46,33 @@
               </v-btn>
             </template>
 
-            <v-list>
-              <v-list-item @click="updateQuery('fr')">
+            <ul class="lang-menu">
+              <li class="lang-select" @click="updateQuery('fr')">
+                <NuxtImg src="/icons/france.svg" alt="France Flag" />
                 <button>Français</button>
-              </v-list-item>
-              <v-list-item @click="updateQuery('en')">
+              </li>
+              <li class="lang-select" @click="updateQuery('en')">
+                <NuxtImg src="/icons/uk.svg" alt="UK Flag" />
                 <button>English</button>
-              </v-list-item>
-              <v-list-item @click="updateQuery('ja')">
+              </li>
+              <li class="lang-select" @click="updateQuery('ja')">
+                <NuxtImg src="/icons/japan.svg" alt="Japan Flag" />
                 <button>日本語</button>
-              </v-list-item>
-            </v-list>
+              </li>
+            </ul>
           </v-menu>
         </ul>
       </nav>
 
-      <v-fab v-else icon="mdi-menu" @click.stop="drawer = !drawer"></v-fab>
+      <v-fab
+        v-if="!$viewport.isGreaterThan('md')"
+        icon="mdi-menu"
+        @click.stop="drawer = !drawer"
+      ></v-fab>
     </header>
+    <div ref="helperRef" class="header-helper"></div>
     <v-navigation-drawer
+      v-if="$viewport.isLessOrEquals('md')"
       class="drawer"
       style="height: 100vh; position: fixed"
       v-model="drawer"
@@ -75,12 +81,8 @@
       :absolute="true"
       width="200"
     >
+      <h3>{{ headerData.Title[lang] }}</h3>
       <ul>
-        <li class="lang">
-          <NuxtImg src="/icons/france.svg" @click="updateQuery('fr')"></NuxtImg>
-          <NuxtImg src="/icons/uk.svg" @click="updateQuery('en')"></NuxtImg>
-          <NuxtImg src="/icons/japan.svg" @click="updateQuery('ja')"></NuxtImg>
-        </li>
         <li>
           <NuxtLink class="" to="#landing-section">{{
             headerData.Presentation[lang]
@@ -116,12 +118,70 @@
             headerData.Contact[lang]
           }}</NuxtLink>
         </li>
+        <li class="lang">
+          <NuxtImg
+            src="/icons/france.svg"
+            alt="France Flag"
+            @click="updateQuery('fr')"
+          />
+          <NuxtImg
+            src="/icons/uk.svg"
+            alt="UK Flag"
+            @click="updateQuery('en')"
+          />
+          <NuxtImg
+            src="/icons/japan.svg"
+            alt="Japan Flag"
+            @click="updateQuery('ja')"
+          />
+        </li>
       </ul>
     </v-navigation-drawer>
   </div>
 </template>
 
 <script setup>
+// Définir les classes du header
+const headerClass = ref("light");
+const helperRef = ref(null); // Référence vers le helper invisible
+
+const isDarkColor = (rgb) => {
+  const [r, g, b] = rgb;
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  console.log(brightness);
+  return brightness < 156;
+};
+
+const getBackgroundColor = (element) => {
+  const style = window.getComputedStyle(element);
+  const bgColor = style.backgroundColor;
+  const match = bgColor.match(/\d+/g);
+  return match ? match.map(Number) : [255, 255, 255];
+};
+
+const updateHeaderTextColor = () => {
+  const helper = helperRef.value; // Utiliser le helper
+  if (!helper) return;
+
+  const nextElement = document.elementFromPoint(
+    helper.getBoundingClientRect().left,
+    helper.getBoundingClientRect().top
+  ); // Élément au niveau du helper
+  if (nextElement) {
+    const bgColor = getBackgroundColor(nextElement);
+    headerClass.value = isDarkColor(bgColor) ? "dark" : "light";
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", updateHeaderTextColor);
+  updateHeaderTextColor();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateHeaderTextColor);
+});
+
 const lang = useState("lang");
 const drawer = ref(false);
 
@@ -143,20 +203,81 @@ function setLanguage(language) {
 
 <style scoped>
 header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   background: linear-gradient(to top, transparent, rgba(155, 155, 155, 0.486));
+  transition: color 0.3s ease;
+
+  nav {
+    padding: 1rem 1.25rem;
+  }
+  .nav-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.header.light {
+  color: var(--text-primary);
+}
+
+.header.dark {
+  color: white;
+}
+
+.header-helper {
+  position: fixed;
+  left: 0;
+  top: 68px;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  background-color: black;
+  z-index: -999;
 }
 
 .drawer {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+
+  h3 {
+    padding: 15px 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
   ul {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+
+    li {
+      padding: 10px 20px;
+      text-align: end;
+    }
+
+    li:not(:last-child):nth-child(odd) {
+      background-color: #7fb3980c;
+    }
+
+    li:not(:last-child):nth-child(even) {
+      background-color: #0abab404;
+    }
   }
 
   .lang {
     display: flex;
     justify-content: space-between;
+    padding-inline: 1rem;
 
     & > * {
       border-radius: 100px;
@@ -164,8 +285,30 @@ header {
       height: 30px;
     }
   }
-  li {
-    text-align: center;
+}
+
+.lang-menu {
+  background-color: var(--neutral);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px 0 rgba(31, 38, 135, 0.37);
+
+  .lang-select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    gap: 10px;
+
+    img {
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: var(--primary);
+      color: var(--neutral);
+    }
   }
 }
 </style>

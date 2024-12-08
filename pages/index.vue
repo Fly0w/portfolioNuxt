@@ -1,18 +1,14 @@
 <template>
   <v-main>
-    <Presentation class="bg-slate-50" />
-    <Wave colorBg="bg-slate-50" />
+    <Presentation class="bg-slate" />
+    <Wave colorBg="bg-slate" />
     <Curriculum class="bg-tprimary" />
     <Wave colorBg="bg-tprimary" />
-    <Values class="bg-slate-50" />
-    <!-- <Wave colorBg="bg-slate-50" /> -->
+    <Values class="bg-slate" />
     <Projects />
-    <!-- <Wave colorBg="bg-slate-50" /> -->
-    <Skills class="bg-slate-50" />
-    <!-- <Wave colorBg="bg-slate-50" /> -->
-    <Downloads class="bg-slate-50" />
-    <Contacts class="bg-tprimary" />
-    <!-- <Wave colorBg="bg-tprimary" /> -->
+    <Skills class="bg-slate" />
+    <Downloads class="bg-slate" />
+    <Footer />
   </v-main>
 </template>
 
@@ -25,6 +21,7 @@ import Skills from "~/components/Sections/Skills.vue";
 import Contacts from "~/components/Sections/Contacts.vue";
 import Downloads from "~/components/Sections/Downloads.vue";
 import Wave from "~/components/Utilities/Wave.vue";
+import Footer from "~/components/HeaderFooter/Footer.vue";
 
 useSeoMeta({
   title: "Florian Budniewski's Portfolio",

@@ -55,7 +55,7 @@
             {{ curriculumData.item2.subtitle[lang] }}
           </h6>
 
-          <p class="md:text-lg sm:text-sm font-tertiary">
+          <p class="font-tertiary">
             {{ curriculumData.item2.description[lang] }}
           </p>
         </div>
@@ -146,7 +146,7 @@
             {{ curriculumData.item6.subtitle[lang] }}
           </h6>
 
-          <p class="md:text-lg sm:text-sm font-tertiary">
+          <p class="font-tertiary">
             {{ curriculumData.item6.description[lang] }}
           </p>
         </div>
@@ -175,7 +175,7 @@
             {{ curriculumData.item7.subtitle[lang] }}
           </h6>
 
-          <p class="md:text-lg sm:text-sm font-tertiary">
+          <p class="font-tertiary">
             {{ curriculumData.item7.description[lang] }}
           </p>
         </div>
@@ -251,7 +251,15 @@ p {
   }
 
   p {
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 </style>

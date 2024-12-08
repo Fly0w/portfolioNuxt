@@ -1,9 +1,5 @@
 <template>
-  <section
-    v-if="$viewport.isGreaterThan('sm')"
-    id="projects"
-    :style="{ backgroundImage: `url('/gif/${selectedProject}.gif')` }"
-  >
+  <section v-if="$viewport.isGreaterThan('sm')" id="projects">
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <main>
       <div class="project-card">
@@ -75,8 +71,16 @@
         />
       </li>
     </ul>
+    <img
+      v-for="project in Object.keys(listProjects)"
+      :key="project"
+      v-show="selectedProject === project"
+      class="bg-video"
+      :src="`/gif/${project}.gif`"
+      :alt="`Video of the ${project} project`"
+    />
   </section>
-  <section v-else id="projects" class="bg-slate-50">
+  <section v-else id="projects" class="bg-slate">
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <div class="main-content">
       <ul class="list-projects-phone">
@@ -91,10 +95,20 @@
             :alt="title"
             draggable="false"
           />
+          <p class="project-title">{{ project.title[lang] }}</p>
         </li>
       </ul>
 
-      <img :src="`/gif/${selectedProject}.gif`" />
+      <div class="project-video-container">
+        <img
+          v-for="project in Object.keys(listProjects)"
+          :key="project"
+          v-show="selectedProject === project"
+          :src="`/gif/${project}.gif`"
+          :alt="`Video of the ${project} project`"
+          class="project-video-phone"
+        />
+      </div>
       <div class="project-card-phone">
         <h3>{{ listProjects[selectedProject].title[lang] }}</h3>
         <h4>{{ listProjects[selectedProject].subtitle[lang] }}</h4>
@@ -229,6 +243,13 @@ function onDragEnd() {
   background-position: center;
   background-size: cover;
   padding: 0;
+
+  .bg-video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 #projects::before {
   content: "";
@@ -364,7 +385,7 @@ main {
         place-items: center;
       }
       img {
-        height: 70px;
+        height: 50px;
       }
 
       &::-webkit-scrollbar {
@@ -403,14 +424,17 @@ main {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    height: clamp(110px, 15vh, 180px);
+    aspect-ratio: 1;
 
     &:hover {
       transform: scale(1.05);
     }
 
     .image-project {
-      height: clamp(110px, 15vh, 180px);
-      aspect-ratio: 1;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -448,14 +472,12 @@ main {
   .list-projects-phone {
     display: flex;
     align-items: center;
-    gap: 20px;
     width: 100%;
-
-    padding: 0.75rem;
     overflow-y: scroll;
     flex-shrink: 0;
 
     background-color: var(--neutral);
+    border-block: rgb(63, 63, 63) solid 3px;
 
     &::-webkit-scrollbar {
       display: none; /* Chrome, Safari, Edge */
@@ -463,15 +485,33 @@ main {
 
     li {
       flex-shrink: 0;
-      box-shadow: 0 2px 7px 0 rgba(31, 38, 135, 0.37);
-      border-radius: 100%;
+      box-shadow: 0 2px 2px 0 rgba(31, 38, 135, 0.37);
       overflow: hidden;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
+      height: 100px;
+      width: 150px;
+      position: relative;
 
       .image-project-phone {
-        height: 60px;
+        height: 100%;
+        width: 100%;
         aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .project-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-weight: bold;
       }
     }
   }
@@ -567,6 +607,16 @@ main {
       border-radius: 15px;
       text-align: center;
       font-size: 20px;
+    }
+  }
+
+  .project-video-container {
+    height: clamp(250px, 50vw, 500px);
+    width: 100%;
+    .project-video-phone {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 }

@@ -2,37 +2,34 @@
   <section id="contacts">
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <main>
-      <NuxtLink
-        to="https://www.facebook.com/florian.budniewski"
-        target="_blank"
-        class="blob blob1 hover:scale-110"
-        ><NuxtImg src="/icons/facebook.svg" class="logo"
+      <NuxtLink to="https://github.com/Fly0w" target="_blank" class="blob blob1"
+        ><NuxtImg src="/icons/github.svg" alt="GitHub logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://www.instagram.com/florian_budniewski/"
         target="_blank"
-        class="blob blob2 hover:scale-110"
+        class="blob blob2"
       >
-        <NuxtImg src="/icons/instagram.svg" class="logo"
+        <NuxtImg src="/icons/instagram.svg" alt="Instagram logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://line.me/ti/p/b5CM9fnHGz"
         target="_blank"
-        class="blob blob6 hover:scale-110"
-        ><NuxtImg src="/icons/line.svg" class="logo"
+        class="blob blob6"
+        ><NuxtImg src="/icons/line.svg" alt="Line logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://www.linkedin.com/in/florian-budniewski/"
         target="_blank"
-        class="blob blob4 hover:scale-110"
-        ><NuxtImg src="/icons/linkedin.svg" class="logo"
+        class="blob blob4"
+        ><NuxtImg src="/icons/linkedin.svg" alt="LinkedIn logo" class="logo"
       /></NuxtLink>
 
       <NuxtLink
         to="mailto:florian.budniewski@hotmail.com"
         target="_blank"
-        class="blob blob8 hover:scale-110"
-        ><NuxtImg src="/icons/email.svg" class="logo"
+        class="blob blob8"
+        ><NuxtImg src="/icons/email.svg" alt="Email logo" class="logo"
       /></NuxtLink>
     </main>
   </section>
@@ -71,6 +68,10 @@ main {
   height: 150px;
   transition: all 0.5s;
 
+  &:hover {
+    transform: scale(1.1);
+  }
+
   .logo {
     height: 60px;
     width: 60px;
@@ -78,7 +79,7 @@ main {
 }
 
 .blob1 {
-  background: #3b5998;
+  background: #242938;
 
   --svg: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M824 665.5Q691 831 492.5 844t-298-165.5Q95 500 192 317.5T515.5 108q226.5-27 334 182.5t-25.5 375Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23444cf7%22 d=%22M824 665.5Q691 831 492.5 844t-298-165.5Q95 500 192 317.5T515.5 108q226.5-27 334 182.5t-25.5 375Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
   -webkit-mask-image: var(--svg);
@@ -114,7 +115,7 @@ main {
   mask-image: var(--svg);
 }
 .blob8 {
-  background: #000000;
+  background: rgb(194, 151, 33);
 
   --svg: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M811 735.5Q653 971 422 848T144.5 466.5Q98 208 367 144t435.5 146Q969 500 811 735.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23444cf7%22 d=%22M811 735.5Q653 971 422 848T144.5 466.5Q98 208 367 144t435.5 146Q969 500 811 735.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
   -webkit-mask-image: var(--svg);
@@ -141,13 +142,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     transition: all 0.5s;
 
+    &:hover {
+      transform: none;
+    }
+
     .logo {
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
     }
   }
 }

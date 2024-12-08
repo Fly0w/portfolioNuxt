@@ -5,6 +5,7 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
+
   app: {
     head: {
       htmlAttrs: {
@@ -27,12 +28,6 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   css: ["~/assets/main.scss"],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
   build: {
     transpile: ["vuetify"],
   },

@@ -15,7 +15,6 @@
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.13.0",
     "nuxt-viewport": "^2.2.0",
-    "tailwindcss": "^3.4.1",
     "vue": "latest",
     "vue-router": "latest"
   },

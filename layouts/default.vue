@@ -1,15 +1,13 @@
 <template>
-  <div class="test">
+  <div>
     <v-layout>
       <Header />
       <slot />
-      <Footer
-    /></v-layout>
+    </v-layout>
   </div>
 </template>
 
 <script setup>
-import Footer from "~/components/HeaderFooter/Footer.vue";
 import Header from "~/components/HeaderFooter/Header.vue";
 </script>
 
