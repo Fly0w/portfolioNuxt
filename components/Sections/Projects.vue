@@ -71,13 +71,17 @@
         />
       </li>
     </ul>
-    <img
+    <video
       v-for="project in Object.keys(listProjects)"
       :key="project"
       v-show="selectedProject === project"
       class="bg-video"
-      :src="`/gif/${project}.gif`"
+      :src="`/video/${project}.webm`"
       :alt="`Video of the ${project} project`"
+      autoplay
+      loop
+      muted
+      playsinline
     />
   </section>
   <section v-else id="projects" class="bg-slate">
@@ -100,13 +104,17 @@
       </ul>
 
       <div class="project-video-container">
-        <img
+        <video
           v-for="project in Object.keys(listProjects)"
           :key="project"
           v-show="selectedProject === project"
-          :src="`/gif/${project}.gif`"
+          :src="`/video/${project}.webm`"
           :alt="`Video of the ${project} project`"
           class="project-video-phone"
+          autoplay
+          loop
+          muted
+          playsinline
         />
       </div>
       <div class="project-card-phone">
