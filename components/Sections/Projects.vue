@@ -13,11 +13,10 @@
             :key="tool"
             :style="`anchor-name: --projects-${tool}`"
           >
-            <NuxtImg
+            <img
               class="image-project"
-              :src="iconsData()[tool]?.icon"
-              :alt="iconsData()[tool]?.iconText"
-              draggable="false"
+              :src="iconsData[tool]?.icon"
+              :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
             />
@@ -28,7 +27,7 @@
           class="popover"
           :style="`position-anchor: --projects-${isHover}`"
         >
-          {{ iconsData()[isHover].iconText }}
+          {{ iconsData[isHover].iconText }}
         </p>
       </div>
       <div class="buttons">
@@ -63,12 +62,7 @@
         :key="title"
         @click="selectedProject = title"
       >
-        <NuxtImg
-          class="image-project"
-          :src="`/img/${title}.jpg`"
-          :alt="title"
-          draggable="false"
-        />
+        <img class="image-project" :src="`/img/${title}.jpg`" :alt="title" />
       </li>
     </ul>
     <video
@@ -93,11 +87,10 @@
           :key="title"
           @click="selectedProject = title"
         >
-          <NuxtImg
+          <img
             class="image-project-phone"
             :src="`/img/${title}.jpg`"
             :alt="title"
-            draggable="false"
           />
           <p class="project-title">{{ project.title[lang] }}</p>
         </li>
@@ -128,11 +121,10 @@
             :key="tool"
             :style="`anchor-name: --projects-${tool}`"
           >
-            <NuxtImg
+            <img
               class="image-project"
-              :src="iconsData()[tool]?.icon"
-              :alt="iconsData()[tool]?.iconText"
-              draggable="false"
+              :src="iconsData[tool]?.icon"
+              :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
             />
@@ -143,7 +135,7 @@
           class="popover"
           :style="`position-anchor: --projects-${isHover}`"
         >
-          {{ iconsData()[isHover].iconText }}
+          {{ iconsData[isHover].iconText }}
         </p>
       </div>
 
@@ -169,6 +161,7 @@
 
 <script setup>
 const listProjects = useProjectsData();
+const iconsData = useIconsData();
 const selectedProject = ref("KidsJapan");
 const isDragging = ref(false);
 const startX = ref(0);

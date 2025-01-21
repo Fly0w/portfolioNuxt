@@ -12,6 +12,7 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@nuxt/image": "^1.8.0",
+    "@nuxtjs/robots": "^5.2.2",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.13.0",
     "nuxt-viewport": "^2.2.0",

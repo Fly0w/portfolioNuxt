@@ -10,14 +10,14 @@
       <h2 class="font-tertiary">{{ dataPresentation.title[lang] }}</h2>
       <NuxtLink to="#projects" class="projects-button font-primary">
         {{ dataPresentation.button[lang] }}
-        <NuxtImg
+        <img
           class="icon-right"
           alt="right arrow"
           src="/icons/arrow-right.svg"
         />
       </NuxtLink>
     </header>
-    <NuxtImg
+    <img
       class="img-florian"
       alt="Drawing of Florian Budniewski"
       src="/img/body drawing no-bg.webp"

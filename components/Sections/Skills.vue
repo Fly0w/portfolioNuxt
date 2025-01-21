@@ -3,16 +3,15 @@
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <div class="skill-container">
       <div class="skill-display">
-        <NuxtImg
+        <img
           class="image-project"
-          :src="iconsData()[selectedSkill]?.icon"
-          :alt="iconsData()[selectedSkill]?.iconText"
-          draggable="false"
+          :src="iconsData[selectedSkill]?.icon"
+          :alt="iconsData[selectedSkill]?.iconText"
         />
         <div class="skill-explanation">
-          <h3>{{ iconsData()[selectedSkill]?.iconText }}</h3>
-          <h4>{{ iconsData()[selectedSkill]?.subtitle[lang] }}</h4>
-          <p>{{ iconsData()[selectedSkill]?.description[lang] }}</p>
+          <h3>{{ iconsData[selectedSkill]?.iconText }}</h3>
+          <h4>{{ iconsData[selectedSkill]?.subtitle[lang] }}</h4>
+          <p>{{ iconsData[selectedSkill]?.description[lang] }}</p>
         </div>
       </div>
       <div class="skill-list-card">
@@ -24,11 +23,10 @@
               :key="skill"
               @click="selectedSkill = skill"
             >
-              <NuxtImg
+              <img
                 class="image-project"
-                :src="iconsData()[skill]?.icon"
-                :alt="iconsData()[skill]?.iconText"
-                draggable="false"
+                :src="iconsData[skill]?.icon"
+                :alt="iconsData[skill]?.iconText"
                 @mouseenter="
                   hoveredCategory = `used`;
                   hoveredSkill = skill;
@@ -50,11 +48,10 @@
               :key="skill"
               @click="selectedSkill = skill"
             >
-              <NuxtImg
+              <img
                 class="image-project"
-                :src="iconsData()[skill]?.icon"
-                :alt="iconsData()[skill]?.iconText"
-                draggable="false"
+                :src="iconsData[skill]?.icon"
+                :alt="iconsData[skill]?.iconText"
                 @mouseenter="
                   hoveredCategory = `learning`;
                   hoveredSkill = skill;
@@ -76,11 +73,10 @@
               :key="skill"
               @click="selectedSkill = skill"
             >
-              <NuxtImg
+              <img
                 class="image-project"
-                :src="iconsData()[skill]?.icon"
-                :alt="iconsData()[skill]?.iconText"
-                draggable="false"
+                :src="iconsData[skill]?.icon"
+                :alt="iconsData[skill]?.iconText"
                 @mouseenter="
                   hoveredCategory = `interested`;
                   hoveredSkill = skill;
@@ -99,7 +95,7 @@
           class="popover"
           :style="`position-anchor: --skills-${hoveredCategory}-${hoveredSkill}`"
         >
-          {{ iconsData()[hoveredSkill].iconText }}
+          {{ iconsData[hoveredSkill].iconText }}
         </p>
       </div>
     </div>
@@ -107,16 +103,15 @@
   <section v-else id="skills">
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
     <div class="skill-display">
-      <NuxtImg
+      <img
         class="image-project"
-        :src="iconsData()[selectedSkill]?.icon"
-        :alt="iconsData()[selectedSkill]?.iconText"
-        draggable="false"
+        :src="iconsData[selectedSkill]?.icon"
+        :alt="iconsData[selectedSkill]?.iconText"
       />
       <div class="skill-explanation">
-        <h3>{{ iconsData()[selectedSkill]?.iconText }}</h3>
-        <h4>{{ iconsData()[selectedSkill]?.subtitle[lang] }}</h4>
-        <p>{{ iconsData()[selectedSkill]?.description[lang] }}</p>
+        <h3>{{ iconsData[selectedSkill]?.iconText }}</h3>
+        <h4>{{ iconsData[selectedSkill]?.subtitle[lang] }}</h4>
+        <p>{{ iconsData[selectedSkill]?.description[lang] }}</p>
       </div>
     </div>
     <div class="skill-list-card">
@@ -128,11 +123,10 @@
             :key="skill"
             @click="selectedSkill = skill"
           >
-            <NuxtImg
+            <img
               class="image-project"
-              :src="iconsData()[skill]?.icon"
-              :alt="iconsData()[skill]?.iconText"
-              draggable="false"
+              :src="iconsData[skill]?.icon"
+              :alt="iconsData[skill]?.iconText"
               @mouseenter="
                 hoveredCategory = `used`;
                 hoveredSkill = skill;
@@ -154,11 +148,10 @@
             :key="skill"
             @click="selectedSkill = skill"
           >
-            <NuxtImg
+            <img
               class="image-project"
-              :src="iconsData()[skill]?.icon"
-              :alt="iconsData()[skill]?.iconText"
-              draggable="false"
+              :src="iconsData[skill]?.icon"
+              :alt="iconsData[skill]?.iconText"
               @mouseenter="
                 hoveredCategory = `learning`;
                 hoveredSkill = skill;
@@ -180,11 +173,10 @@
             :key="skill"
             @click="selectedSkill = skill"
           >
-            <NuxtImg
+            <img
               class="image-project"
-              :src="iconsData()[skill]?.icon"
-              :alt="iconsData()[skill]?.iconText"
-              draggable="false"
+              :src="iconsData[skill]?.icon"
+              :alt="iconsData[skill]?.iconText"
               :style="`anchor-name: --skills-interested-${skill}`"
             />
           </li>
@@ -196,6 +188,7 @@
 
 <script setup>
 const lang = useState("lang");
+const iconsData = useIconsData();
 const hoveredCategory = ref("");
 const hoveredSkill = ref("");
 const selectedSkill = ref("nuxt");

@@ -1,4 +1,4 @@
-export default function iconsData(): any {
+export default function useIconsData(): any {
   return {
     bootstrap: {
       icon: "/icons/LogosBootstrap.svg",

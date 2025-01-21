@@ -1,7 +1,7 @@
 <template>
   <footer id="contacts">
     <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
-    <NuxtImg
+    <img
       class="drawing"
       src="/img/drawingme.jpg"
       alt="Drawing of Florian Budniewski"
@@ -12,33 +12,33 @@
     </div>
     <div class="list-blobs">
       <NuxtLink to="https://github.com/Fly0w" target="_blank" class="blob blob1"
-        ><NuxtImg src="/icons/github.svg" alt="GitHub logo" class="logo"
+        ><img src="/icons/github.svg" alt="GitHub logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://www.instagram.com/florian_budniewski/"
         target="_blank"
         class="blob blob2"
       >
-        <NuxtImg src="/icons/instagram.svg" alt="Instagram logo" class="logo"
+        <img src="/icons/instagram.svg" alt="Instagram logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://line.me/ti/p/b5CM9fnHGz"
         target="_blank"
         class="blob blob6"
-        ><NuxtImg src="/icons/line.svg" alt="Line logo" class="logo"
+        ><img src="/icons/line.svg" alt="Line logo" class="logo"
       /></NuxtLink>
       <NuxtLink
         to="https://www.linkedin.com/in/florian-budniewski/"
         target="_blank"
         class="blob blob4"
-        ><NuxtImg src="/icons/linkedin.svg" alt="LinkedIn logo" class="logo"
+        ><img src="/icons/linkedin.svg" alt="LinkedIn logo" class="logo"
       /></NuxtLink>
 
       <NuxtLink
         to="mailto:florian.budniewski@hotmail.com"
         target="_blank"
         class="blob blob8"
-        ><NuxtImg src="/icons/email.svg" alt="Email logo" class="logo"
+        ><img src="/icons/email.svg" alt="Email logo" class="logo"
       /></NuxtLink>
     </div>
   </footer>

@@ -48,15 +48,15 @@
 
             <ul class="lang-menu">
               <li class="lang-select" @click="updateQuery('fr')">
-                <NuxtImg src="/icons/france.svg" alt="France Flag" />
+                <img src="/icons/france.svg" alt="France Flag" />
                 <button>Français</button>
               </li>
               <li class="lang-select" @click="updateQuery('en')">
-                <NuxtImg src="/icons/uk.svg" alt="UK Flag" />
+                <img src="/icons/uk.svg" alt="UK Flag" />
                 <button>English</button>
               </li>
               <li class="lang-select" @click="updateQuery('ja')">
-                <NuxtImg src="/icons/japan.svg" alt="Japan Flag" />
+                <img src="/icons/japan.svg" alt="Japan Flag" />
                 <button>日本語</button>
               </li>
             </ul>
@@ -119,17 +119,13 @@
           }}</NuxtLink>
         </li>
         <li class="lang">
-          <NuxtImg
+          <img
             src="/icons/france.svg"
             alt="France Flag"
             @click="updateQuery('fr')"
           />
-          <NuxtImg
-            src="/icons/uk.svg"
-            alt="UK Flag"
-            @click="updateQuery('en')"
-          />
-          <NuxtImg
+          <img src="/icons/uk.svg" alt="UK Flag" @click="updateQuery('en')" />
+          <img
             src="/icons/japan.svg"
             alt="Japan Flag"
             @click="updateQuery('ja')"

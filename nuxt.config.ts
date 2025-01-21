@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     },
     "@nuxt/image",
     "nuxt-viewport",
+    "@nuxtjs/robots",
   ],
   viewport: {
     breakpoints: {
