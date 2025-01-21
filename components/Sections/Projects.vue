@@ -410,6 +410,10 @@ main {
   overflow-y: scroll;
   cursor: grab;
 
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+
   &:active {
     cursor: grabbing; /* Curseur lors du drag */
   }
@@ -436,6 +440,9 @@ main {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      -webkit-user-drag: none;
+      user-drag: none;
+      user-select: none;
     }
   }
 }
