@@ -38,30 +38,34 @@
               headerData.Contact[lang]
             }}</NuxtLink>
           </li>
-
-          <v-menu location="bottom">
-            <template v-slot:activator="{ props }">
-              <v-btn elevation="0" color="transparent" v-bind="props">
-                <v-icon color="blue" icon="mdi-web" size="large"></v-icon>
-              </v-btn>
-            </template>
-
-            <ul class="lang-menu">
-              <li class="lang-select" @click="updateQuery('fr')">
-                <img src="/icons/france.svg" alt="France Flag" />
-                <button>Français</button>
-              </li>
-              <li class="lang-select" @click="updateQuery('en')">
-                <img src="/icons/uk.svg" alt="UK Flag" />
-                <button>English</button>
-              </li>
-              <li class="lang-select" @click="updateQuery('ja')">
-                <img src="/icons/japan.svg" alt="Japan Flag" />
-                <button>日本語</button>
-              </li>
-            </ul>
-          </v-menu>
         </ul>
+        <v-menu location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              aria-label="Language Button"
+              elevation="0"
+              color="transparent"
+              v-bind="props"
+            >
+              <v-icon color="blue" icon="mdi-web" size="large"></v-icon>
+            </v-btn>
+          </template>
+
+          <ul class="lang-menu">
+            <li class="lang-select" @click="updateQuery('fr')">
+              <img src="/icons/france.svg" alt="France Flag" />
+              <button>Français</button>
+            </li>
+            <li class="lang-select" @click="updateQuery('en')">
+              <img src="/icons/uk.svg" alt="UK Flag" />
+              <button>English</button>
+            </li>
+            <li class="lang-select" @click="updateQuery('ja')">
+              <img src="/icons/japan.svg" alt="Japan Flag" />
+              <button>日本語</button>
+            </li>
+          </ul>
+        </v-menu>
       </nav>
 
       <v-fab
