@@ -21,7 +21,6 @@
       class="img-florian"
       alt="Drawing of Florian Budniewski"
       src="/img/body drawing no-bg.webp"
-      loading="lazy"
     />
   </section>
 </template>
