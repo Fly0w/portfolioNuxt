@@ -14,9 +14,9 @@ export default defineNuxtConfig({
       title: "Florian Budniewski",
       meta: [
         {
-          name: "Florian Buniewski's",
+          name: "Florian Buniewski's Portfolio",
           content:
-            "Welcome to Florian Budniewski's Frontend Developper Portfolio. Learn more about my education, my career, my skills, or my projects !",
+            "Welcome to my web frontend developer portfolio! Learn more about my education, my career, my skills, or my projects !",
         },
       ],
       link: [
