@@ -1,10 +1,11 @@
 <template>
   <footer id="contacts">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
-    <img
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
+    <NuxtImg
       class="drawing"
-      src="/img/drawingme.jpg"
+      src="/img/drawingme.webp"
       alt="Drawing of Florian Budniewski"
+      loading="lazy"
     />
     <div class="text">
       <p class="content">" {{ text[lang] }} "</p>

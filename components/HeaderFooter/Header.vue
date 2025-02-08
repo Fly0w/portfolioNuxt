@@ -85,7 +85,7 @@
       :absolute="true"
       width="200"
     >
-      <h3>{{ headerData.Title[lang] }}</h3>
+      <p class="title">{{ headerData.Title[lang] }}</p>
       <ul>
         <li>
           <NuxtLink class="" to="#landing-section">{{
@@ -212,6 +212,8 @@ header {
   transition: color 0.3s ease;
 
   nav {
+    display: flex;
+    gap: 3rem;
     padding: 1rem 1.25rem;
   }
   .nav-elements {
@@ -248,7 +250,7 @@ header {
   flex-direction: column;
   color: var(--text-primary);
 
-  h3 {
+  .title {
     padding: 15px 20px;
     font-size: 20px;
     text-align: center;

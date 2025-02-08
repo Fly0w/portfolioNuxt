@@ -3,11 +3,11 @@
     <header>
       <div>
         <h1 class="font-secondary">{{ dataPresentation.name.fr }}</h1>
-        <h3 v-if="lang === 'ja'" class="font-tertiary">
+        <h2 v-if="lang === 'ja'" class="font-tertiary">
           {{ dataPresentation.name.ja }}
-        </h3>
+        </h2>
       </div>
-      <h2 class="font-tertiary">{{ dataPresentation.title[lang] }}</h2>
+      <p class="title font-tertiary">{{ dataPresentation.title[lang] }}</p>
       <NuxtLink to="#projects" class="projects-button font-primary">
         {{ dataPresentation.button[lang] }}
         <img
@@ -17,10 +17,11 @@
         />
       </NuxtLink>
     </header>
-    <img
+    <NuxtImg
       class="img-florian"
       alt="Drawing of Florian Budniewski"
       src="/img/body drawing no-bg.webp"
+      loading="lazy"
     />
   </section>
 </template>
@@ -50,14 +51,14 @@ header {
   gap: 30px;
 
   h1,
-  h2 {
+  .title {
     font-size: clamp(30px, 5vw, 70px);
   }
   h1 {
     letter-spacing: 3px;
   }
 
-  h2 {
+  .title {
     max-width: 90%;
   }
 
@@ -104,7 +105,7 @@ header {
       font-size: clamp(30px, 10vw, 40px);
     }
 
-    h2 {
+    .title {
       font-size: clamp(20px, 5vw, 40px);
     }
 

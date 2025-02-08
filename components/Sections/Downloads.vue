@@ -1,6 +1,6 @@
 <template>
   <section v-if="$viewport.isGreaterThan('sm')" id="downloads" class="dwld">
-    <h3 class="section-header font-tertiary">{{ textdata.title }}</h3>
+    <p class="section-header font-tertiary">{{ textdata.title }}</p>
     <ul>
       <li>
         <a href="/files/履歴書フロリアンブドニエブスキ.pdf" download>
@@ -20,7 +20,7 @@
     </ul>
   </section>
   <section v-else id="downloads" class="dwld-phone">
-    <h3 class="section-header font-tertiary">{{ textdata.title }}</h3>
+    <p class="section-header font-tertiary">{{ textdata.title }}</p>
     <ul>
       <li>
         <a href="/files/履歴書フロリアンブドニエブスキ.pdf" download>
@@ -154,7 +154,7 @@ const textdata = computed(() => {
       }
 
       &::after {
-        background-image: url("/img/rirekisho.jpg");
+        background-image: url("/img/rirekisho.webp");
       }
     }
 
@@ -167,7 +167,7 @@ const textdata = computed(() => {
       }
 
       &::after {
-        background-image: url("/img/englishCV.jpg");
+        background-image: url("/img/englishCV.webp");
       }
     }
 
@@ -179,7 +179,7 @@ const textdata = computed(() => {
       }
 
       &::after {
-        background-image: url("/img/shokumu.jpg");
+        background-image: url("/img/shokumu.webp");
       }
     }
   }
@@ -246,19 +246,19 @@ const textdata = computed(() => {
 
     li:nth-child(1) {
       &::after {
-        background-image: url("/img/rirekisho.jpg");
+        background-image: url("/img/rirekisho.webp");
       }
     }
 
     li:nth-child(2) {
       &::after {
-        background-image: url("/img/englishCV.jpg");
+        background-image: url("/img/englishCV.webp");
       }
     }
 
     li:nth-child(3) {
       &::after {
-        background-image: url("/img/shokumu.jpg");
+        background-image: url("/img/shokumu.webp");
       }
     }
   }

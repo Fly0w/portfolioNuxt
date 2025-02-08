@@ -1,6 +1,6 @@
 <template>
   <section v-if="$viewport.isGreaterThan('sm')" id="skills">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <div class="skill-container">
       <div class="skill-display">
         <img
@@ -9,14 +9,14 @@
           :alt="iconsData[selectedSkill]?.iconText"
         />
         <div class="skill-explanation">
-          <h3>{{ iconsData[selectedSkill]?.iconText }}</h3>
-          <h4>{{ iconsData[selectedSkill]?.subtitle[lang] }}</h4>
+          <p class="icon-text">{{ iconsData[selectedSkill]?.iconText }}</p>
+          <p class="subtitle">{{ iconsData[selectedSkill]?.subtitle[lang] }}</p>
           <p>{{ iconsData[selectedSkill]?.description[lang] }}</p>
         </div>
       </div>
       <div class="skill-list-card">
         <div class="skill-list">
-          <h4>{{ categories.used[lang] }}</h4>
+          <p class="subtitle">{{ categories.used[lang] }}</p>
           <ul>
             <li
               v-for="skill in listSkills.used"
@@ -41,7 +41,7 @@
           </ul>
         </div>
         <div class="skill-list">
-          <h4>{{ categories.learn[lang] }}</h4>
+          <p class="subtitle">{{ categories.learn[lang] }}</p>
           <ul>
             <li
               v-for="skill in listSkills.learning"
@@ -66,7 +66,7 @@
           </ul>
         </div>
         <div class="skill-list">
-          <h4>{{ categories.interest[lang] }}</h4>
+          <p class="subtitle">{{ categories.interest[lang] }}</p>
           <ul>
             <li
               v-for="skill in listSkills.interested"
@@ -101,7 +101,7 @@
     </div>
   </section>
   <section v-else id="skills">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <div class="skill-display">
       <img
         class="image-project"
@@ -109,14 +109,14 @@
         :alt="iconsData[selectedSkill]?.iconText"
       />
       <div class="skill-explanation">
-        <h3>{{ iconsData[selectedSkill]?.iconText }}</h3>
-        <h4>{{ iconsData[selectedSkill]?.subtitle[lang] }}</h4>
+        <p class="icon-text">{{ iconsData[selectedSkill]?.iconText }}</p>
+        <p class="subtitle">{{ iconsData[selectedSkill]?.subtitle[lang] }}</p>
         <p>{{ iconsData[selectedSkill]?.description[lang] }}</p>
       </div>
     </div>
     <div class="skill-list-card">
       <div class="skill-list">
-        <h4>{{ categories.used[lang] }}</h4>
+        <p class="subtitle">{{ categories.used[lang] }}</p>
         <ul>
           <li
             v-for="skill in listSkills.used"
@@ -141,7 +141,7 @@
         </ul>
       </div>
       <div class="skill-list">
-        <h4>{{ categories.learn[lang] }}</h4>
+        <p class="subtitle">{{ categories.learn[lang] }}</p>
         <ul>
           <li
             v-for="skill in listSkills.learning"
@@ -166,7 +166,7 @@
         </ul>
       </div>
       <div class="skill-list">
-        <h4>{{ categories.interest[lang] }}</h4>
+        <p class="subtitle">{{ categories.interest[lang] }}</p>
         <ul>
           <li
             v-for="skill in listSkills.interested"
@@ -285,12 +285,12 @@ const listSkills = {
 
       font-family: "Raleway", "sans-serif";
 
-      h3 {
+      .icon-text {
         font-size: clamp(40px, 3.5vw, 80px);
         color: var(--primary);
       }
 
-      h4 {
+      .subtitle {
         font-size: clamp(20px, 2.5vw, 30px);
         font-weight: bold;
         max-width: 60%;
@@ -316,7 +316,7 @@ const listSkills = {
     width: 400px;
     gap: 30px;
     .skill-list {
-      h4 {
+      .subtitle {
         font-family: "Afacad", "sans-serif";
         font-size: 30px;
         color: var(--primary);
@@ -395,12 +395,12 @@ const listSkills = {
 
       font-family: "Raleway", "sans-serif";
 
-      h3 {
+      .icon-text {
         font-size: clamp(40px, 3.5vw, 80px);
         color: var(--primary);
       }
 
-      h4 {
+      .subtitle {
         font-size: clamp(20px, 2.5vw, 30px);
         font-weight: bold;
         max-width: 90%;
@@ -428,7 +428,7 @@ const listSkills = {
     }
 
     .skill-list {
-      h4 {
+      .subtitle {
         font-family: "Afacad", "sans-serif";
         font-size: 24px;
         color: var(--primary);

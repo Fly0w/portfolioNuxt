@@ -18,7 +18,6 @@ import Curriculum from "~/components/Sections/Curriculum.vue";
 import Values from "~/components/Sections/Values.vue";
 import Projects from "~/components/Sections/Projects.vue";
 import Skills from "~/components/Sections/Skills.vue";
-import Contacts from "~/components/Sections/Contacts.vue";
 import Downloads from "~/components/Sections/Downloads.vue";
 import Wave from "~/components/Utilities/Wave.vue";
 import Footer from "~/components/HeaderFooter/Footer.vue";

@@ -17,7 +17,8 @@
     "nuxt": "^3.13.0",
     "nuxt-viewport": "^2.2.0",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue-tsc": "^2.1.10"
   },
   "devDependencies": {
     "sass": "^1.80.4",

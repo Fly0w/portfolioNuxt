@@ -1,10 +1,12 @@
 <template>
   <section v-if="$viewport.isGreaterThan('sm')" id="projects">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <main>
       <div class="project-card">
-        <h3>{{ listProjects[selectedProject].title[lang] }}</h3>
-        <h4>{{ listProjects[selectedProject].subtitle[lang] }}</h4>
+        <p class="title">{{ listProjects[selectedProject].title[lang] }}</p>
+        <p class="subtitle">
+          {{ listProjects[selectedProject].subtitle[lang] }}
+        </p>
         <p>{{ listProjects[selectedProject].description[lang] }}</p>
         <ul ref="listTools">
           <li
@@ -13,12 +15,13 @@
             :key="tool"
             :style="`anchor-name: --projects-${tool}`"
           >
-            <img
+            <NuxtImg
               class="image-project"
               :src="iconsData[tool]?.icon"
               :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
+              loading="lazy"
             />
           </li>
         </ul>
@@ -62,7 +65,11 @@
         :key="title"
         @click="selectedProject = title"
       >
-        <img class="image-project" :src="`/img/${title}.jpg`" :alt="title" />
+        <NuxtImg
+          class="image-project"
+          :src="`/img/${title}.webp`"
+          :alt="title"
+        />
       </li>
     </ul>
     <video
@@ -79,7 +86,7 @@
     />
   </section>
   <section v-else id="projects" class="bg-slate">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <div class="main-content">
       <ul class="list-projects-phone">
         <li
@@ -87,10 +94,11 @@
           :key="title"
           @click="selectedProject = title"
         >
-          <img
+          <NuxtImg
             class="image-project-phone"
-            :src="`/img/${title}.jpg`"
+            :src="`/img/${title}.webp`"
             :alt="title"
+            loading="lazy"
           />
           <p class="project-title">{{ project.title[lang] }}</p>
         </li>
@@ -111,8 +119,10 @@
         />
       </div>
       <div class="project-card-phone">
-        <h3>{{ listProjects[selectedProject].title[lang] }}</h3>
-        <h4>{{ listProjects[selectedProject].subtitle[lang] }}</h4>
+        <p class="title">{{ listProjects[selectedProject].title[lang] }}</p>
+        <p class="subtitle">
+          {{ listProjects[selectedProject].subtitle[lang] }}
+        </p>
         <p>{{ listProjects[selectedProject].description[lang] }}</p>
         <ul ref="listTools">
           <li
@@ -121,7 +131,7 @@
             :key="tool"
             :style="`anchor-name: --projects-${tool}`"
           >
-            <img
+            <NuxtImg
               class="image-project"
               :src="iconsData[tool]?.icon"
               :alt="iconsData[tool]?.iconText"
@@ -330,14 +340,14 @@ main {
     max-width: 500px;
     max-height: 90%;
 
-    h3 {
+    .title {
       text-align: center;
       font-size: clamp(40px, 3.5vw, 70px);
       font-weight: bold;
       flex-shrink: 0;
     }
 
-    h4 {
+    .subtitle {
       font-size: clamp(22px, 2.5vw, 30px);
       flex-shrink: 0;
     }
@@ -536,14 +546,14 @@ main {
     padding: 1rem;
     width: 100%;
 
-    h3 {
+    .title {
       text-align: center;
       font-size: 30px;
       font-weight: bold;
       flex-shrink: 0;
     }
 
-    h4 {
+    .subtitle {
       font-size: 20px;
       flex-shrink: 0;
     }

@@ -1,10 +1,10 @@
 <template>
   <section id="values">
-    <h3 class="section-header font-tertiary">{{ title[lang] }}</h3>
+    <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <main class="content">
       <div class="selected-content">
-        <h4>{{ valuesData[selectedValue].title[lang] }}</h4>
-        <h5>{{ valuesData[selectedValue].subtitle[lang] }}</h5>
+        <h1>{{ valuesData[selectedValue].title[lang] }}</h1>
+        <h2>{{ valuesData[selectedValue].subtitle[lang] }}</h2>
         <p>{{ valuesData[selectedValue].description[lang] }}</p>
       </div>
       <div v-if="$viewport.isGreaterThan('sm')" class="selector">
@@ -88,7 +88,7 @@ const title = {
   flex: 1;
   font-family: "Raleway", "sans-serif";
 
-  h4 {
+  h1 {
     font-size: 80px;
     color: var(--primary);
   }
@@ -176,7 +176,7 @@ const title = {
     flex: 1;
     font-family: "Raleway", "sans-serif";
 
-    h4 {
+    h1 {
       font-size: 40px;
     }
 
