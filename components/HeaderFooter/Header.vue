@@ -53,15 +53,30 @@
 
           <ul class="lang-menu">
             <li class="lang-select" @click="updateQuery('fr')">
-              <NuxtImg src="/icons/france.svg" alt="France Flag" preload />
+              <NuxtImg
+                src="/icons/france.svg"
+                alt="France Flag"
+                height="20"
+                width="40"
+              />
               <button>Français</button>
             </li>
             <li class="lang-select" @click="updateQuery('en')">
-              <NuxtImg src="/icons/uk.svg" alt="UK Flag" preload />
+              <NuxtImg
+                src="/icons/uk.svg"
+                alt="UK Flag"
+                height="20"
+                width="40"
+              />
               <button>English</button>
             </li>
             <li class="lang-select" @click="updateQuery('ja')">
-              <NuxtImg src="/icons/japan.svg" alt="Japan Flag" preload />
+              <NuxtImg
+                src="/icons/japan.svg"
+                alt="Japan Flag"
+                height="20"
+                width="40"
+              />
               <button>日本語</button>
             </li>
           </ul>
@@ -130,12 +145,22 @@
             src="/icons/france.svg"
             alt="France Flag"
             @click="updateQuery('fr')"
+            height="20"
+            width="40"
           />
-          <img src="/icons/uk.svg" alt="UK Flag" @click="updateQuery('en')" />
+          <img
+            src="/icons/uk.svg"
+            alt="UK Flag"
+            @click="updateQuery('en')"
+            height="20"
+            width="40"
+          />
           <img
             src="/icons/japan.svg"
             alt="Japan Flag"
             @click="updateQuery('ja')"
+            height="20"
+            width="40"
           />
         </li>
       </ul>
@@ -307,6 +332,7 @@ header {
 
     img {
       height: 20px;
+      width: auto;
     }
 
     &:hover {

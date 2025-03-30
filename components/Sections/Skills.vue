@@ -4,9 +4,11 @@
     <div class="skill-container">
       <div class="skill-display">
         <img
-          class="image-project"
+          class="selected-skill"
           :src="iconsData[selectedSkill]?.icon"
           :alt="iconsData[selectedSkill]?.iconText"
+          height="200"
+          width="200"
         />
         <div class="skill-explanation">
           <p class="icon-text">{{ iconsData[selectedSkill]?.iconText }}</p>
@@ -36,6 +38,8 @@
                   hoveredSkill = '';
                 "
                 :style="`anchor-name: --skills-used-${skill}`"
+                height="35"
+                width="35"
               />
             </li>
           </ul>
@@ -61,6 +65,8 @@
                   hoveredSkill = '';
                 "
                 :style="`anchor-name: --skills-learning-${skill}`"
+                height="35"
+                width="35"
               />
             </li>
           </ul>
@@ -86,6 +92,8 @@
                   hoveredSkill = '';
                 "
                 :style="`anchor-name: --skills-interested-${skill}`"
+                height="35"
+                width="35"
               />
             </li>
           </ul>
@@ -104,9 +112,11 @@
     <p class="section-header font-tertiary">{{ title[lang] }}</p>
     <div class="skill-display">
       <img
-        class="image-project"
+        class="selected-skill"
         :src="iconsData[selectedSkill]?.icon"
         :alt="iconsData[selectedSkill]?.iconText"
+        height="35"
+        width="35"
       />
       <div class="skill-explanation">
         <p class="icon-text">{{ iconsData[selectedSkill]?.iconText }}</p>
@@ -136,6 +146,8 @@
                 hoveredSkill = '';
               "
               :style="`anchor-name: --skills-used-${skill}`"
+              height="25"
+              width="25"
             />
           </li>
         </ul>
@@ -161,6 +173,8 @@
                 hoveredSkill = '';
               "
               :style="`anchor-name: --skills-learning-${skill}`"
+              height="25"
+              width="25"
             />
           </li>
         </ul>
@@ -178,6 +192,8 @@
               :src="iconsData[skill]?.icon"
               :alt="iconsData[skill]?.iconText"
               :style="`anchor-name: --skills-interested-${skill}`"
+              height="25"
+              width="25"
             />
           </li>
         </ul>
@@ -272,8 +288,9 @@ const listSkills = {
     max-height: 100%;
     overflow: hidden;
 
-    img {
-      height: 300px;
+    .selected-skill {
+      height: 200px;
+      width: auto;
     }
 
     .skill-explanation {
@@ -337,6 +354,7 @@ const listSkills = {
 
         .image-project {
           height: 35px;
+          width: auto;
           transition: all 0.2s ease-in-out;
           filter: drop-shadow(0px 0px 5px #5757573d);
 
@@ -382,8 +400,9 @@ const listSkills = {
     overflow: hidden;
     padding: 1rem;
 
-    img {
-      height: 150px;
+    .selected-skill {
+      height: 130px;
+      width: auto;
     }
 
     .skill-explanation {
@@ -451,6 +470,7 @@ const listSkills = {
 
         .image-project {
           height: 25px;
+          width: auto;
           transition: all 0.2s ease-in-out;
           filter: drop-shadow(0px 0px 5px #5757573d);
         }

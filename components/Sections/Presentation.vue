@@ -14,6 +14,8 @@
           class="icon-right"
           alt="right arrow"
           src="/icons/arrow-right.svg"
+          height="40"
+          width="40"
         />
       </NuxtLink>
     </header>
@@ -21,6 +23,8 @@
       class="img-florian"
       alt="Drawing of Florian Budniewski"
       src="/img/body drawing no-bg.webp"
+      height="560"
+      width="400"
     />
   </section>
 </template>
@@ -82,7 +86,7 @@ header {
   }
 }
 .img-florian {
-  width: clamp(200px, 40vw, 400px); /* Limite la largeur */
+  width: clamp(200px, 20vw, 400px); /* Limite la largeur */
   height: auto; /* Garde le ratio de l'image */
   object-fit: contain; /* Évite l’étirement en gardant l’image dans ses limites */
   flex-shrink: 0; /* Empêche la réduction de l'image dans le flex */

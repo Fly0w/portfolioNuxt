@@ -21,6 +21,8 @@
               :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
+              height="50"
+              width="50"
             />
           </li>
         </ul>
@@ -68,6 +70,8 @@
           class="image-project"
           :src="`/img/${title}.webp`"
           :alt="title"
+          height="130"
+          width="130"
         />
       </li>
     </ul>
@@ -98,6 +102,8 @@
             :src="`/img/${title}.webp`"
             :alt="title"
             loading="lazy"
+            height="50"
+            width="50"
           />
           <p class="project-title">{{ project.title[lang] }}</p>
         </li>
@@ -136,6 +142,8 @@
               :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
+              height="50"
+              width="50"
             />
           </li>
         </ul>
