@@ -21,7 +21,6 @@
               :alt="iconsData[tool]?.iconText"
               @mouseenter="isHover = tool"
               @mouseleave="isHover = ''"
-              loading="lazy"
             />
           </li>
         </ul>

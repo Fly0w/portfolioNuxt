@@ -53,15 +53,15 @@
 
           <ul class="lang-menu">
             <li class="lang-select" @click="updateQuery('fr')">
-              <img src="/icons/france.svg" alt="France Flag" />
+              <NuxtImg src="/icons/france.svg" alt="France Flag" preload />
               <button>Français</button>
             </li>
             <li class="lang-select" @click="updateQuery('en')">
-              <img src="/icons/uk.svg" alt="UK Flag" />
+              <NuxtImg src="/icons/uk.svg" alt="UK Flag" preload />
               <button>English</button>
             </li>
             <li class="lang-select" @click="updateQuery('ja')">
-              <img src="/icons/japan.svg" alt="Japan Flag" />
+              <NuxtImg src="/icons/japan.svg" alt="Japan Flag" preload />
               <button>日本語</button>
             </li>
           </ul>
@@ -72,6 +72,9 @@
         v-if="!$viewport.isGreaterThan('md')"
         icon="mdi-menu"
         @click.stop="drawer = !drawer"
+        location="top right"
+        absolute
+        class="me-4 mt-4"
       ></v-fab>
     </header>
     <div ref="helperRef" class="header-helper"></div>

@@ -2,7 +2,7 @@ export const useProjectsData = () => {
   return {
     KidsJapan: {
       githubLink: ``,
-      pageLink: ``,
+      pageLink: `https://kidsjapan.jp/`,
       title: {
         fr: "KidsJapan",
         en: "KidsJapan",
@@ -14,9 +14,9 @@ export const useProjectsData = () => {
         ja: "子供向けのレッスンを提供するC2C教育プラットフォーム",
       },
       description: {
-        fr: "KidsJapan est un site web où tout le monde peut s'inscrire comme enseignant et proposer des cours privés pour les enfants de moins de 14 ans. L'application comprend des fonctionnalités telles que le chat en temps réel, une carte interactive pour trouver des cours dans la région souhaitée, la diffusion vidéo en direct pour les cours en ligne, et bien plus encore.",
-        en: "KidsJapan is a website where anyone can register as a teacher and post private lessons for children under 14 years old. The web application includes many useful features such as real-time chat, an interactive map to find lessons in the desired area, real-time video streaming for online lessons, and more.",
-        ja: "KidsJapanは、誰でも教師として登録し、14歳未満の子供向けの個別レッスンを投稿できるウェブサイトです。アプリには、リアルタイムチャット、希望地域でレッスンを見つけるためのインタラクティブな地図、オンラインレッスンのためのリアルタイムビデオ配信など、便利な機能が多数含まれています。",
+        fr: "KidsJapan est un site web où tout le monde peut s'inscrire comme enseignant et proposer des cours privés pour les enfants de moins de 15 ans. L'application comprend des fonctionnalités telles que le chat en temps réel, une carte interactive pour trouver des cours dans la région souhaitée, la diffusion vidéo en direct pour les cours en ligne, et bien plus encore.",
+        en: "KidsJapan is a website where anyone can register as a teacher and post private lessons for children under 15 years old. The web application includes many useful features such as real-time chat, an interactive map to find lessons in the desired area, real-time video streaming for online lessons, and more.",
+        ja: "KidsJapanは、誰でも教師として登録し、15歳未満の子供向けの個別レッスンを投稿できるウェブサイトです。アプリには、リアルタイムチャット、希望地域でレッスンを見つけるためのインタラクティブな地図、オンラインレッスンのためのリアルタイムビデオ配信など、便利な機能が多数含まれています。",
       },
       tools: ["html", "css", "vueJS", "nuxt", "vuetify", "bootstrap", "seo"],
     },
